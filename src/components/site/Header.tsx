@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { NAV } from "@/lib/site";
 import logo from "@/assets/kuganja-logo.png";
 
-export function Brand() {
+export function Brand({ className = "h-14 sm:h-16" }: { className?: string }) {
   return (
     <Link to="/" className="flex shrink-0 items-center" aria-label="Kuganja Foundation home">
       <img
@@ -13,7 +13,7 @@ export function Brand() {
         alt="Kuganja Foundation"
         width={167}
         height={195}
-        className="h-12 w-auto sm:h-14"
+        className={`${className} w-auto`}
       />
     </Link>
   );
