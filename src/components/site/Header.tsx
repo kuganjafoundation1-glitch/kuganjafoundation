@@ -3,21 +3,18 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV } from "@/lib/site";
+import logo from "@/assets/kuganja-logo.png";
 
-export function Brand({ light = false }: { light?: boolean }) {
+export function Brand() {
   return (
-    <Link to="/" className="flex items-center gap-3" aria-label="Kuganja Foundation home">
-      <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gold font-display text-lg font-extrabold text-gold">
-        K
-      </span>
-      <span className="leading-tight">
-        <span className={`block font-display text-lg font-extrabold tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>
-          Kuganja
-        </span>
-        <span className={`block text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${light ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-          Foundation
-        </span>
-      </span>
+    <Link to="/" className="flex shrink-0 items-center" aria-label="Kuganja Foundation home">
+      <img
+        src={logo}
+        alt="Kuganja Foundation"
+        width={167}
+        height={195}
+        className="h-12 w-auto sm:h-14"
+      />
     </Link>
   );
 }

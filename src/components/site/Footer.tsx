@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-navy-deep text-primary-foreground/80">
       <div className="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1.2fr]">
         <div>
-          <Brand light />
+          <Brand />
           <p className="mt-5 max-w-sm text-sm">
             A charity organization in Namuwongo, Kampala, uplifting vulnerable families and individuals through holistic care,
             spiritual nourishment, mental health advocacy, creative expression, and practical skills.
