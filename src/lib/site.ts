@@ -7,7 +7,6 @@ export const CONTACT = {
   email: "Kuganjafoundation1@gmail.com",
   emailHref: "mailto:Kuganjafoundation1@gmail.com",
   location: "Namuwongo, Kampala, Uganda",
-  social: "Kuganja Foundation",
 };
 
 export const DONATION = {

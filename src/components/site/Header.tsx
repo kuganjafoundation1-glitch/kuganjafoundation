@@ -11,8 +11,8 @@ export function Brand({ className = "h-14 sm:h-16" }: { className?: string }) {
       <img
         src={logo}
         alt="Kuganja Foundation"
-        width={167}
-        height={195}
+        width={672}
+        height={787}
         className={`${className} w-auto`}
       />
     </Link>
