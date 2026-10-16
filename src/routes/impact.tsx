@@ -24,6 +24,10 @@ import christmas1 from "@/assets/christmas-1.jpg.asset.json";
 import christmas2 from "@/assets/christmas-2.jpg.asset.json";
 import christmas3 from "@/assets/christmas-3.jpg.asset.json";
 import christmas4 from "@/assets/christmas-4.jpg.asset.json";
+import christmas2024_1 from "@/assets/christmas2024-1.jpg.asset.json";
+import christmas2024_2 from "@/assets/christmas2024-2.jpg.asset.json";
+import christmas2024_3 from "@/assets/christmas2024-3.jpg.asset.json";
+import christmas2024_4 from "@/assets/christmas2024-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -78,6 +82,13 @@ const CHRISTMAS_PHOTOS = [
   { src: christmas2.url, w: 1024, h: 768, alt: "Children gathered under decorated tarpaulin watching a movie screening at the Christmas celebration" },
   { src: christmas3.url, w: 1070, h: 713, alt: "A volunteer handing a green Christmas hamper to a family outside their home" },
   { src: christmas4.url, w: 1070, h: 713, alt: "A woman joyfully carrying a Christmas hamper after receiving it" },
+];
+
+const CHRISTMAS2024_PHOTOS = [
+  { src: christmas2024_1.url, w: 1070, h: 803, alt: "A volunteer in a Santa hat standing with a large crowd of children at the Christmas celebration" },
+  { src: christmas2024_2.url, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
+  { src: christmas2024_3.url, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
+  { src: christmas2024_4.url, w: 1070, h: 803, alt: "Volunteers in Santa hats posing with families after distributing Christmas gifts" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -232,6 +243,36 @@ function Impact() {
                   onClick={() => setSelected(p)}
                   aria-label={`View photo full size: ${p.alt}`}
                   className="group aspect-[3/2] cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">2024</p>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                Kuganja Foundation organised a Christmas celebration in 2024 to reach out to children and families living in slum
+                communities. The initiative brought festive cheer, care, and encouragement to vulnerable community members,
+                creating an opportunity to share the joy of Christmas and strengthen the spirit of community.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                Through this outreach, the foundation continued its commitment to supporting vulnerable children and families and
+                making a positive difference in their lives.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {CHRISTMAS2024_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-square cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
                   <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 </button>
