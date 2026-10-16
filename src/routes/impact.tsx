@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, PlaceholderNote, SectionHeading } from "@/components/site/PageHero";
 import hero from "@/assets/hero.jpg";
@@ -27,7 +29,24 @@ const OBJECTIVES = [
   "Build financial literacy and practical skills for self-reliance.",
 ];
 
+const OUTREACH_PHOTOS = [
+  { src: outreach1.url, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
+  { src: outreach2.url, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
+  { src: outreach3.url, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
+  { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
+];
+
 function Impact() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (selected === null) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setSelected(null); };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", onKey); };
+  }, [selected]);
+
   return (
     <>
       <PageHero eyebrow="Our impact" title="Change that starts in the community" image={hero}>
