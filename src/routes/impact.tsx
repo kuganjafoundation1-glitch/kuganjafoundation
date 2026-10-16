@@ -140,13 +140,14 @@ function Impact() {
             <X className="h-5 w-5" />
           </button>
           <img
-            src={OUTREACH_PHOTOS[selected].src}
-            alt={OUTREACH_PHOTOS[selected].alt}
+            src={selectedPhoto.src}
+            alt={selectedPhoto.alt}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[88vh] max-w-full rounded-lg object-contain shadow-card"
           />
         </div>
-      )}
+        );
+      })()}
     </>
   );
 }
