@@ -28,6 +28,8 @@ import christmas2024_1 from "@/assets/christmas2024-1.jpg.asset.json";
 import christmas2024_2 from "@/assets/christmas2024-2.jpg.asset.json";
 import christmas2024_3 from "@/assets/christmas2024-3.jpg.asset.json";
 import christmas2024_4 from "@/assets/christmas2024-4.jpg.asset.json";
+import cleaning1 from "@/assets/cleaning-1.jpg.asset.json";
+import cleaning2 from "@/assets/cleaning-2.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -89,6 +91,11 @@ const CHRISTMAS2024_PHOTOS = [
   { src: christmas2024_2.url, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
   { src: christmas2024_3.url, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
   { src: christmas2024_4.url, w: 1070, h: 803, alt: "Volunteers in Santa hats posing with families after distributing Christmas gifts" },
+];
+
+const CLEANING_PHOTOS = [
+  { src: cleaning1.url, w: 1024, h: 768, alt: "A volunteer standing in front of a sanitation truck during the emptying of a community latrine" },
+  { src: cleaning2.url, w: 1024, h: 768, alt: "Workers emptying a shared community latrine with a hose and sanitation truck as residents watch" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -301,6 +308,40 @@ function Impact() {
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {OUTREACH_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    width={p.w}
+                    height={p.h}
+                    className="h-auto w-full object-contain shadow-card transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12">
+            <h3 className="text-2xl text-primary md:text-3xl">Community Cleaning and Sanitation Initiative</h3>
+            <span className="gold-rule mt-4 block" />
+            <p className="mt-5 max-w-3xl text-lg text-foreground/85">
+              Kuganja Foundation, in partnership with another community-focused organisation, participated in community cleaning
+              activities and the emptying of shared community latrines in slum communities. This collaborative initiative aimed to
+              promote better sanitation, improve hygiene, and create cleaner, healthier living environments for residents.
+            </p>
+            <p className="mt-4 max-w-3xl text-lg text-foreground/85">
+              Through partnerships and community engagement, Kuganja Foundation continues to support efforts that address local
+              sanitation challenges and improve community well-being.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {CLEANING_PHOTOS.map((p) => (
                 <button
                   key={p.src}
                   type="button"
