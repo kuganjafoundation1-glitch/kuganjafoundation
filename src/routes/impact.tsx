@@ -12,6 +12,10 @@ import literacy1 from "@/assets/literacy-1.jpg.asset.json";
 import literacy2 from "@/assets/literacy-2.jpg.asset.json";
 import literacy3 from "@/assets/literacy-3.jpg.asset.json";
 import literacy4 from "@/assets/literacy-4.jpg.asset.json";
+import mothers1 from "@/assets/mothers-1.jpg.asset.json";
+import mothers2 from "@/assets/mothers-2.jpg.asset.json";
+import mothers3 from "@/assets/mothers-3.jpg.asset.json";
+import mothers4 from "@/assets/mothers-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
