@@ -12,6 +12,10 @@ import literacy1 from "@/assets/literacy-1.jpg.asset.json";
 import literacy2 from "@/assets/literacy-2.jpg.asset.json";
 import literacy3 from "@/assets/literacy-3.jpg.asset.json";
 import literacy4 from "@/assets/literacy-4.jpg.asset.json";
+import mothers1 from "@/assets/mothers-1.jpg.asset.json";
+import mothers2 from "@/assets/mothers-2.jpg.asset.json";
+import mothers3 from "@/assets/mothers-3.jpg.asset.json";
+import mothers4 from "@/assets/mothers-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -45,6 +49,13 @@ const LITERACY_PHOTOS = [
   { src: literacy2.url, w: 1070, h: 713, alt: "Adult literacy class participants learning together" },
   { src: literacy3.url, w: 1070, h: 713, alt: "Women taking part in an adult literacy session" },
   { src: literacy4.url, w: 1070, h: 713, alt: "Participants of the adult literacy program for women" },
+];
+
+const MOTHERS_PHOTOS = [
+  { src: mothers1.url, w: 600, h: 900, alt: "A single mother cooking food at her small food-vending business" },
+  { src: mothers2.url, w: 600, h: 900, alt: "A mother preparing food at her roadside stall to earn an income" },
+  { src: mothers3.url, w: 600, h: 900, alt: "A mother sorting charcoal to sell at her small business" },
+  { src: mothers4.url, w: 1070, h: 713, alt: "A mother selling charcoal and green bananas at her market stall" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -110,6 +121,36 @@ function Impact() {
                   onClick={() => setSelected(p)}
                   aria-label={`View photo full size: ${p.alt}`}
                   className="group aspect-[3/2] cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Empowering Single Mothers Through Business Support</h3>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                Kuganja Foundation has empowered 20 single mothers living in slum communities by providing them with capital to
+                start or run small-scale businesses. This initiative helps mothers create income-generating opportunities and
+                provide for their families.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                However, many more mothers still need support to build sustainable livelihoods and improve their families'
+                well-being. Kuganja Foundation seeks partners and well-wishers to help extend this initiative to more vulnerable
+                mothers.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {MOTHERS_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-square cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
                   <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 </button>
