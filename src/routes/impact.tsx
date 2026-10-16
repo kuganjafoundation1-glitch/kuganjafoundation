@@ -28,6 +28,8 @@ import christmas2024_1 from "@/assets/christmas2024-1.jpg.asset.json";
 import christmas2024_2 from "@/assets/christmas2024-2.jpg.asset.json";
 import christmas2024_3 from "@/assets/christmas2024-3.jpg.asset.json";
 import christmas2024_4 from "@/assets/christmas2024-4.jpg.asset.json";
+import cleaning1 from "@/assets/cleaning-1.jpg.asset.json";
+import cleaning2 from "@/assets/cleaning-2.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -89,6 +91,11 @@ const CHRISTMAS2024_PHOTOS = [
   { src: christmas2024_2.url, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
   { src: christmas2024_3.url, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
   { src: christmas2024_4.url, w: 1070, h: 803, alt: "Volunteers in Santa hats posing with families after distributing Christmas gifts" },
+];
+
+const CLEANING_PHOTOS = [
+  { src: cleaning1.url, w: 1024, h: 768, alt: "A volunteer standing in front of a sanitation truck during the emptying of a community latrine" },
+  { src: cleaning2.url, w: 1024, h: 768, alt: "Workers emptying a shared community latrine with a hose and sanitation truck as residents watch" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
