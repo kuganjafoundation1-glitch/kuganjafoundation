@@ -327,6 +327,40 @@ function Impact() {
               ))}
             </div>
           </article>
+
+          <article className="mt-12">
+            <h3 className="text-2xl text-primary md:text-3xl">Community Cleaning and Sanitation Initiative</h3>
+            <span className="gold-rule mt-4 block" />
+            <p className="mt-5 max-w-3xl text-lg text-foreground/85">
+              Kuganja Foundation, in partnership with another community-focused organisation, participated in community cleaning
+              activities and the emptying of shared community latrines in slum communities. This collaborative initiative aimed to
+              promote better sanitation, improve hygiene, and create cleaner, healthier living environments for residents.
+            </p>
+            <p className="mt-4 max-w-3xl text-lg text-foreground/85">
+              Through partnerships and community engagement, Kuganja Foundation continues to support efforts that address local
+              sanitation challenges and improve community well-being.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {CLEANING_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    width={p.w}
+                    height={p.h}
+                    className="h-auto w-full object-contain shadow-card transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </button>
+              ))}
+            </div>
+          </article>
           <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/donate">Support Our Work</Link></Button>
         </div>
       </section>
