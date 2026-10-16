@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, PlaceholderNote, SectionHeading } from "@/components/site/PageHero";
 import hero from "@/assets/hero.jpg";
@@ -27,7 +29,24 @@ const OBJECTIVES = [
   "Build financial literacy and practical skills for self-reliance.",
 ];
 
+const OUTREACH_PHOTOS = [
+  { src: outreach1.url, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
+  { src: outreach2.url, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
+  { src: outreach3.url, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
+  { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
+];
+
 function Impact() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (selected === null) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setSelected(null); };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", onKey); };
+  }, [selected]);
+
   return (
     <>
       <PageHero eyebrow="Our impact" title="Change that starts in the community" image={hero}>
@@ -78,19 +97,57 @@ function Impact() {
               schoolbooks to earn an income, support their families, and build more sustainable livelihoods.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                { src: outreach1.url, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
-                { src: outreach2.url, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
-                { src: outreach3.url, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
-                { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
-              ].map((p) => (
-                <img key={p.src} src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-auto w-full rounded-lg object-contain shadow-card" />
+              {OUTREACH_PHOTOS.map((p, i) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(i)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    width={p.w}
+                    height={p.h}
+                    className="h-auto w-full object-contain shadow-card transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </button>
               ))}
             </div>
           </article>
           <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/donate">Support Our Work</Link></Button>
         </div>
       </section>
+
+      {(() => {
+        const selectedPhoto = selected !== null ? OUTREACH_PHOTOS[selected] ?? null : null;
+        return selectedPhoto && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedPhoto.alt}
+          onClick={() => setSelected(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 p-4 md:p-12"
+        >
+          <button
+            type="button"
+            onClick={() => setSelected(null)}
+            aria-label="Close photo"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-card text-foreground shadow-card transition-colors hover:bg-gold-soft hover:text-primary md:right-8 md:top-8"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={selectedPhoto.src}
+            alt={selectedPhoto.alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[88vh] max-w-full rounded-lg object-contain shadow-card"
+          />
+        </div>
+        );
+      })()}
     </>
   );
 }
