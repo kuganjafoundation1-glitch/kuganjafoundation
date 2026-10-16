@@ -97,13 +97,23 @@ function Impact() {
               schoolbooks to earn an income, support their families, and build more sustainable livelihoods.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                { src: outreach1.url, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
-                { src: outreach2.url, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
-                { src: outreach3.url, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
-                { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
-              ].map((p) => (
-                <img key={p.src} src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-auto w-full rounded-lg object-contain shadow-card" />
+              {OUTREACH_PHOTOS.map((p, i) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(i)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    width={p.w}
+                    height={p.h}
+                    className="h-auto w-full object-contain shadow-card transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </button>
               ))}
             </div>
           </article>
