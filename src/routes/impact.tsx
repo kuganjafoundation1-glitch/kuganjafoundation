@@ -120,6 +120,31 @@ function Impact() {
           <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/donate">Support Our Work</Link></Button>
         </div>
       </section>
+
+      {selected !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={OUTREACH_PHOTOS[selected].alt}
+          onClick={() => setSelected(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 p-4 md:p-12"
+        >
+          <button
+            type="button"
+            onClick={() => setSelected(null)}
+            aria-label="Close photo"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-card text-foreground shadow-card transition-colors hover:bg-gold-soft hover:text-primary md:right-8 md:top-8"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={OUTREACH_PHOTOS[selected].src}
+            alt={OUTREACH_PHOTOS[selected].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[88vh] max-w-full rounded-lg object-contain shadow-card"
+          />
+        </div>
+      )}
     </>
   );
 }
