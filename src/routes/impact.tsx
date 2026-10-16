@@ -16,6 +16,10 @@ import mothers1 from "@/assets/mothers-1.jpg.asset.json";
 import mothers2 from "@/assets/mothers-2.jpg.asset.json";
 import mothers3 from "@/assets/mothers-3.jpg.asset.json";
 import mothers4 from "@/assets/mothers-4.jpg.asset.json";
+import covid1 from "@/assets/covid-1.jpg.asset.json";
+import covid2 from "@/assets/covid-2.jpg.asset.json";
+import covid3 from "@/assets/covid-3.jpg.asset.json";
+import covid4 from "@/assets/covid-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -56,6 +60,13 @@ const MOTHERS_PHOTOS = [
   { src: mothers2.url, w: 600, h: 900, alt: "A mother preparing food at her roadside stall to earn an income" },
   { src: mothers3.url, w: 600, h: 900, alt: "A mother sorting charcoal to sell at her small business" },
   { src: mothers4.url, w: 1070, h: 713, alt: "A mother selling charcoal and green bananas at her market stall" },
+];
+
+const COVID_PHOTOS = [
+  { src: covid1.url, w: 1070, h: 803, alt: "A volunteer handing a bag of relief supplies to a young man outside a home" },
+  { src: covid2.url, w: 612, h: 816, alt: "A woman carrying bags of relief food supplies to distribute" },
+  { src: covid3.url, w: 1032, h: 774, alt: "Foundation volunteers handing a food package to a woman in her home" },
+  { src: covid4.url, w: 1032, h: 774, alt: "Packed relief food parcels and supplies prepared for distribution" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -145,6 +156,35 @@ function Impact() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               {MOTHERS_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-square cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">COVID-19 Relief Support for Vulnerable Families</h3>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                During the COVID-19 pandemic, Kuganja Foundation reached out to over 500 families and individuals, providing food
+                and essential daily necessities to help them navigate a challenging period. This initiative offered practical
+                support to vulnerable community members and helped address some of their basic needs during the crisis.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                The foundation remains committed to supporting vulnerable communities and seeks continued partnerships and
+                resources to expand its community outreach efforts.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {COVID_PHOTOS.map((p) => (
                 <button
                   key={p.src}
                   type="button"
