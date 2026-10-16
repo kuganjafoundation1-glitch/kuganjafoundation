@@ -20,6 +20,10 @@ import covid1 from "@/assets/covid-1.jpg.asset.json";
 import covid2 from "@/assets/covid-2.jpg.asset.json";
 import covid3 from "@/assets/covid-3.jpg.asset.json";
 import covid4 from "@/assets/covid-4.jpg.asset.json";
+import christmas1 from "@/assets/christmas-1.jpg.asset.json";
+import christmas2 from "@/assets/christmas-2.jpg.asset.json";
+import christmas3 from "@/assets/christmas-3.jpg.asset.json";
+import christmas4 from "@/assets/christmas-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -67,6 +71,13 @@ const COVID_PHOTOS = [
   { src: covid2.url, w: 612, h: 816, alt: "A woman carrying bags of relief food supplies to distribute" },
   { src: covid3.url, w: 1032, h: 774, alt: "Foundation volunteers handing a food package to a woman in her home" },
   { src: covid4.url, w: 1032, h: 774, alt: "Packed relief food parcels and supplies prepared for distribution" },
+];
+
+const CHRISTMAS_PHOTOS = [
+  { src: christmas1.url, w: 1070, h: 713, alt: "Volunteers in Santa hats handing Christmas hampers to families in a slum alley" },
+  { src: christmas2.url, w: 1024, h: 768, alt: "Children gathered under decorated tarpaulin watching a movie screening at the Christmas celebration" },
+  { src: christmas3.url, w: 1070, h: 713, alt: "A volunteer handing a green Christmas hamper to a family outside their home" },
+  { src: christmas4.url, w: 1070, h: 713, alt: "A woman joyfully carrying a Christmas hamper after receiving it" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -191,6 +202,36 @@ function Impact() {
                   onClick={() => setSelected(p)}
                   aria-label={`View photo full size: ${p.alt}`}
                   className="group aspect-square cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">December 2023</p>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                In December 2023, Kuganja Foundation organised a Christmas celebration for children living in slum communities,
+                reaching over 700 children and 50 families. The initiative provided clothes, food, Christmas hampers, gifts, and
+                other essential items to bring joy and practical support to vulnerable families during the festive season.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                The celebration also featured a movie screening for the children, creating an opportunity for them to enjoy a
+                memorable Christmas experience filled with fun, care, and togetherness.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {CHRISTMAS_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-[3/2] cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
                   <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 </button>
