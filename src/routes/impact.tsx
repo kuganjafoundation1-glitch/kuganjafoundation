@@ -121,11 +121,13 @@ function Impact() {
         </div>
       </section>
 
-      {selected !== null && (
+      {(() => {
+        const selectedPhoto = selected !== null ? OUTREACH_PHOTOS[selected] ?? null : null;
+        return selectedPhoto && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={OUTREACH_PHOTOS[selected].alt}
+          aria-label={selectedPhoto.alt}
           onClick={() => setSelected(null)}
           className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 p-4 md:p-12"
         >
