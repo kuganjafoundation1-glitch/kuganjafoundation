@@ -20,6 +20,10 @@ import covid1 from "@/assets/covid-1.jpg.asset.json";
 import covid2 from "@/assets/covid-2.jpg.asset.json";
 import covid3 from "@/assets/covid-3.jpg.asset.json";
 import covid4 from "@/assets/covid-4.jpg.asset.json";
+import christmas1 from "@/assets/christmas-1.jpg.asset.json";
+import christmas2 from "@/assets/christmas-2.jpg.asset.json";
+import christmas3 from "@/assets/christmas-3.jpg.asset.json";
+import christmas4 from "@/assets/christmas-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -67,6 +71,13 @@ const COVID_PHOTOS = [
   { src: covid2.url, w: 612, h: 816, alt: "A woman carrying bags of relief food supplies to distribute" },
   { src: covid3.url, w: 1032, h: 774, alt: "Foundation volunteers handing a food package to a woman in her home" },
   { src: covid4.url, w: 1032, h: 774, alt: "Packed relief food parcels and supplies prepared for distribution" },
+];
+
+const CHRISTMAS_PHOTOS = [
+  { src: christmas1.url, w: 1070, h: 713, alt: "Volunteers in Santa hats handing Christmas hampers to families in a slum alley" },
+  { src: christmas2.url, w: 1024, h: 768, alt: "Children gathered under decorated tarpaulin watching a movie screening at the Christmas celebration" },
+  { src: christmas3.url, w: 1070, h: 713, alt: "A volunteer handing a green Christmas hamper to a family outside their home" },
+  { src: christmas4.url, w: 1070, h: 713, alt: "A woman joyfully carrying a Christmas hamper after receiving it" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
