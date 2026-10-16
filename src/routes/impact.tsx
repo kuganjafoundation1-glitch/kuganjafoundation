@@ -51,6 +51,13 @@ const LITERACY_PHOTOS = [
   { src: literacy4.url, w: 1070, h: 713, alt: "Participants of the adult literacy program for women" },
 ];
 
+const MOTHERS_PHOTOS = [
+  { src: mothers1.url, w: 600, h: 900, alt: "A single mother cooking food at her small food-vending business" },
+  { src: mothers2.url, w: 600, h: 900, alt: "A mother preparing food at her roadside stall to earn an income" },
+  { src: mothers3.url, w: 600, h: 900, alt: "A mother sorting charcoal to sell at her small business" },
+  { src: mothers4.url, w: 1070, h: 713, alt: "A mother selling charcoal and green bananas at her market stall" },
+];
+
 type Photo = (typeof OUTREACH_PHOTOS)[number];
 
 function Impact() {
