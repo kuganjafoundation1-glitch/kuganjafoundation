@@ -16,6 +16,10 @@ import mothers1 from "@/assets/mothers-1.jpg.asset.json";
 import mothers2 from "@/assets/mothers-2.jpg.asset.json";
 import mothers3 from "@/assets/mothers-3.jpg.asset.json";
 import mothers4 from "@/assets/mothers-4.jpg.asset.json";
+import covid1 from "@/assets/covid-1.jpg.asset.json";
+import covid2 from "@/assets/covid-2.jpg.asset.json";
+import covid3 from "@/assets/covid-3.jpg.asset.json";
+import covid4 from "@/assets/covid-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
