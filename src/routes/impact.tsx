@@ -8,6 +8,10 @@ import outreach1 from "@/assets/outreach-books-1.jpg.asset.json";
 import outreach2 from "@/assets/outreach-books-2.jpg.asset.json";
 import outreach3 from "@/assets/outreach-books-3.jpg.asset.json";
 import outreach4 from "@/assets/outreach-books-4.jpg.asset.json";
+import literacy1 from "@/assets/literacy-1.jpg.asset.json";
+import literacy2 from "@/assets/literacy-2.jpg.asset.json";
+import literacy3 from "@/assets/literacy-3.jpg.asset.json";
+import literacy4 from "@/assets/literacy-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -36,8 +40,17 @@ const OUTREACH_PHOTOS = [
   { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
 ];
 
+const LITERACY_PHOTOS = [
+  { src: literacy1.url, w: 1070, h: 713, alt: "Women practising reading and writing during an adult literacy class" },
+  { src: literacy2.url, w: 1070, h: 713, alt: "Adult literacy class participants learning together" },
+  { src: literacy3.url, w: 1070, h: 713, alt: "Women taking part in an adult literacy session" },
+  { src: literacy4.url, w: 1070, h: 713, alt: "Participants of the adult literacy program for women" },
+];
+
+type Photo = (typeof OUTREACH_PHOTOS)[number];
+
 function Impact() {
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<Photo | null>(null);
 
   useEffect(() => {
     if (selected === null) return;
@@ -75,7 +88,34 @@ function Impact() {
       <section className="section bg-muted">
         <div className="container-site">
           <SectionHeading eyebrow="Achievements" title="Milestones" />
-          <div className="mt-10"><PlaceholderNote>Verified achievements will be published here as they are documented.</PlaceholderNote></div>
+          <article className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Adult Literacy Education for Women</h3>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                Kuganja Foundation provided free adult literacy education to over 300 women who had never had the opportunity to
+                attend school. The program helped participants develop literacy and communication skills, improving their ability
+                to seek employment and earn an income to support their families.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                Building on this impact, the foundation seeks support to revive the program and extend these opportunities to more
+                women in need.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {LITERACY_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-[3/2] cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
@@ -97,11 +137,11 @@ function Impact() {
               schoolbooks to earn an income, support their families, and build more sustainable livelihoods.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {OUTREACH_PHOTOS.map((p, i) => (
+              {OUTREACH_PHOTOS.map((p) => (
                 <button
                   key={p.src}
                   type="button"
-                  onClick={() => setSelected(i)}
+                  onClick={() => setSelected(p)}
                   aria-label={`View photo full size: ${p.alt}`}
                   className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 >
@@ -122,7 +162,7 @@ function Impact() {
       </section>
 
       {(() => {
-        const selectedPhoto = selected !== null ? OUTREACH_PHOTOS[selected] ?? null : null;
+        const selectedPhoto = selected;
         return selectedPhoto && (
         <div
           role="dialog"
