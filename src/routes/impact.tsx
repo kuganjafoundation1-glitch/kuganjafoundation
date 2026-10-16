@@ -208,6 +208,36 @@ function Impact() {
               ))}
             </div>
           </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">December 2023</p>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                In December 2023, Kuganja Foundation organised a Christmas celebration for children living in slum communities,
+                reaching over 700 children and 50 families. The initiative provided clothes, food, Christmas hampers, gifts, and
+                other essential items to bring joy and practical support to vulnerable families during the festive season.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                The celebration also featured a movie screening for the children, creating an opportunity for them to enjoy a
+                memorable Christmas experience filled with fun, care, and togetherness.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {CHRISTMAS_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-[3/2] cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
