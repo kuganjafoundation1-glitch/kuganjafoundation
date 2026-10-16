@@ -127,6 +127,36 @@ function Impact() {
               ))}
             </div>
           </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Empowering Single Mothers Through Business Support</h3>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                Kuganja Foundation has empowered 20 single mothers living in slum communities by providing them with capital to
+                start or run small-scale businesses. This initiative helps mothers create income-generating opportunities and
+                provide for their families.
+              </p>
+              <p className="mt-4 text-lg text-foreground/85">
+                However, many more mothers still need support to build sustainable livelihoods and improve their families'
+                well-being. Kuganja Foundation seeks partners and well-wishers to help extend this initiative to more vulnerable
+                mothers.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {MOTHERS_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group aspect-square cursor-zoom-in overflow-hidden rounded-lg shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                </button>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
