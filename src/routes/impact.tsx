@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, PlaceholderNote, SectionHeading } from "@/components/site/PageHero";
-import hero from "@/assets/hero.jpg";
+import impactHero from "@/assets/impact-hero.jpg.asset.json";
 import outreach1 from "@/assets/outreach-books-1.jpg.asset.json";
 import outreach2 from "@/assets/outreach-books-2.jpg.asset.json";
 import outreach3 from "@/assets/outreach-books-3.jpg.asset.json";
@@ -124,7 +124,7 @@ function Impact() {
 
   return (
     <>
-      <PageHero eyebrow="Our impact" title="Change that starts in the community" image={hero}>
+      <PageHero eyebrow="Our impact" title="Change that starts in the community" image={impactHero.url}>
         <p>We walk alongside our communities — listening, responding, and building resilience together.</p>
       </PageHero>
 
