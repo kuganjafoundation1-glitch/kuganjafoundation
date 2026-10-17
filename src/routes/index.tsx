@@ -6,7 +6,7 @@ import { CONTACT, PROGRAMS } from "@/lib/site";
 import hero from "@/assets/home-hero.jpg.asset.json";
 const heroUrl = hero.url;
 import cinema from "@/assets/cinema.jpg";
-import arts from "@/assets/arts.jpg";
+import arts from "@/assets/home-arts.jpg.asset.json";
 import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -126,7 +126,7 @@ function Index() {
               </article>
             ))}
             <div className="relative overflow-hidden rounded-lg">
-              <img src={arts} alt="Young people painting and sewing in a creative workshop" loading="lazy" width={1200} height={912} className="h-full min-h-64 w-full object-cover" />
+              <img src={arts.url} alt="Women writing notes during a community education session" loading="lazy" width={1070} height={713} className="h-full min-h-64 w-full object-cover" />
             </div>
           </div>
         </div>
