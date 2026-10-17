@@ -3,7 +3,8 @@ import { HandHeart, Sparkles, Brain, Church, Phone, Mail, MapPin, MessageCircle,
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/PageHero";
 import { CONTACT, PROGRAMS } from "@/lib/site";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/home-hero.jpg.asset.json";
+const heroUrl = hero.url;
 import cinema from "@/assets/cinema.jpg";
 import arts from "@/assets/arts.jpg";
 import wellbeing from "@/assets/wellbeing.jpg";
@@ -41,7 +42,7 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary">
-        <img src={hero} alt="Community members and volunteers gathered together in Namuwongo, Kampala" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={heroUrl} alt="Kuganja Foundation volunteers carrying food supplies through the streets of Namuwongo, Kampala" width={1280} height={853} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-site relative py-24 md:py-36">
           <p className="eyebrow">Namuwongo · Kampala · Uganda</p>
