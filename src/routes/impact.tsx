@@ -30,6 +30,10 @@ import christmas2024_3 from "@/assets/christmas2024-3.jpg.asset.json";
 import christmas2024_4 from "@/assets/christmas2024-4.jpg.asset.json";
 import cleaning1 from "@/assets/cleaning-1.jpg.asset.json";
 import cleaning2 from "@/assets/cleaning-2.jpg.asset.json";
+import food1 from "@/assets/outreach-food-1.jpg.asset.json";
+import food2 from "@/assets/outreach-food-2.jpg.asset.json";
+import food3 from "@/assets/outreach-food-3.jpg.asset.json";
+import food4 from "@/assets/outreach-food-4.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -96,6 +100,13 @@ const CHRISTMAS2024_PHOTOS = [
 const CLEANING_PHOTOS = [
   { src: cleaning1.url, w: 1024, h: 768, alt: "A volunteer standing in front of a sanitation truck during the emptying of a community latrine" },
   { src: cleaning2.url, w: 1024, h: 768, alt: "Workers emptying a shared community latrine with a hose and sanitation truck as residents watch" },
+];
+
+const FOOD_PHOTOS = [
+  { src: food1.url, w: 1280, h: 853, alt: "Kuganja Foundation volunteers distributing food supplies and clothing to community members" },
+  { src: food2.url, w: 1280, h: 853, alt: "Volunteers handing out food supplies and clothing during the community outreach" },
+  { src: food3.url, w: 1280, h: 853, alt: "Volunteers sharing food supplies and clothing with vulnerable community members" },
+  { src: food4.url, w: 853, h: 1280, alt: "Volunteers distributing food supplies and clothing during the community outreach" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -342,6 +353,36 @@ function Impact() {
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {CLEANING_PHOTOS.map((p) => (
+                <button
+                  key={p.src}
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    width={p.w}
+                    height={p.h}
+                    className="h-auto w-full object-contain shadow-card transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12">
+            <h3 className="text-2xl text-primary md:text-3xl">Community Outreach: Sharing Food and Clothing</h3>
+            <span className="gold-rule mt-4 block" />
+            <p className="mt-5 max-w-3xl text-lg text-foreground/85">
+              Kuganja Foundation carried out a community outreach initiative to support vulnerable individuals and families by
+              distributing food supplies and clothing. This initiative reflects the foundation's commitment to meeting basic needs,
+              showing compassion, and extending practical support to community members facing hardship.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {FOOD_PHOTOS.map((p) => (
                 <button
                   key={p.src}
                   type="button"
