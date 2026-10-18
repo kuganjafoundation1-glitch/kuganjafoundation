@@ -3,14 +3,14 @@ import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/PageHero";
 import martin from "@/assets/kasheija-martin.png.asset.json";
-import ash iraf from "@/assets/muwonge-ashiraf.png.asset.json";
+import ashiraf from "@/assets/muwonge-ashiraf.png.asset.json";
 import margaret from "@/assets/nakayemba-margaret.png.asset.json";
 import collin from "@/assets/tuyizere-collin.png.asset.json";
 import video from "@/assets/discover-kuganja.mp4.asset.json";
 import poster from "@/assets/discover-poster.jpg.asset.json";
 
 const members = [
-  { name: "Muwonge Ashiraf", role: "Administrator", image: ash iraf },
+  { name: "Muwonge Ashiraf", role: "Administrator", image: ashiraf },
   { name: "Nakayemba Margaret", role: "Program Manager", image: margaret },
   { name: "Tuyizere Collin", role: "Finance Administrator", image: collin },
 ];
