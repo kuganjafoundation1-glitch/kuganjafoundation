@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { HandHeart, Sparkles, Brain, Church, Phone, Mail, MapPin, MessageCircle, ArrowRight, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/PageHero";
+import { HomeTeam } from "@/components/site/HomeTeam";
 import { CONTACT, PROGRAMS } from "@/lib/site";
 import hero from "@/assets/home-hero.jpg.asset.json";
 const heroUrl = hero.url;
@@ -168,6 +169,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <HomeTeam />
 
       {/* Future */}
       <section className="section bg-muted">

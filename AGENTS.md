@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep homepage team portraits and video in a dedicated HomeTeam component; import CDN asset pointers so uploaded media stays out of source control.
