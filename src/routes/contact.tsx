@@ -12,6 +12,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Contact Kuganja Foundation in Namuwongo, Kampala: +256 781 500 800, WhatsApp +256 703 264 035, Kuganjafoundation1@gmail.com." },
       { property: "og:title", content: "Contact Kuganja Foundation" },
       { property: "og:description", content: "Reach us by phone, WhatsApp, or email in Namuwongo, Kampala, Uganda." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,

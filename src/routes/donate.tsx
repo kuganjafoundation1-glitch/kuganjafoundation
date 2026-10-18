@@ -11,6 +11,8 @@ export const Route = createFileRoute("/donate")({
       { name: "description", content: "Support Kuganja Foundation via MTN Mobile Money, Airtel Money, or bank transfer to Centenary Bank." },
       { property: "og:title", content: "Support the Work of Kuganja Foundation" },
       { property: "og:description", content: "Official donation channels: MTN Mobile Money, Airtel Money, and Centenary Bank." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Donate,

@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import hero from "@/assets/hero.jpg";
-import wellbeing from "@/assets/wellbeing.jpg";
+import hero from "@/assets/impact-hero.jpg.asset.json";
+import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -11,6 +11,8 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Learn about Kuganja Foundation, founded in 2018 in Namuwongo, Kampala by Kasheija Martin — our story, vision, mission, and approach." },
       { property: "og:title", content: "About Kuganja Foundation" },
       { property: "og:description", content: "Our story, vision, mission, and holistic approach to community upliftment." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,
@@ -26,7 +28,7 @@ const VALUES = [
 function About() {
   return (
     <>
-      <PageHero eyebrow="About us" title="Healing the mind while equipping the hands" image={hero}>
+      <PageHero eyebrow="About us" title="Healing the mind while equipping the hands" image={hero.url}>
         <p>A Ugandan charity walking alongside vulnerable families since 2018.</p>
       </PageHero>
 
@@ -39,7 +41,7 @@ function About() {
               knowledge, we walk alongside our communities to break cycles of poverty and build resilient futures.
             </p>
           </SectionHeading>
-          <img src={wellbeing} alt="Community members in a supportive group conversation" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <img src={wellbeing.url} alt="Women gathered during an adult literacy class" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
         </div>
       </section>
 

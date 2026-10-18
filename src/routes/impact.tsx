@@ -42,6 +42,8 @@ export const Route = createFileRoute("/impact")({
       { name: "description", content: "How Kuganja Foundation's community-centered approach supports vulnerable families in Namuwongo, Kampala." },
       { property: "og:title", content: "Our Impact — Kuganja Foundation" },
       { property: "og:description", content: "Our community-centered approach, objectives, and documented achievements." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Impact,
