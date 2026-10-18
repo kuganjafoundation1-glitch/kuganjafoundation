@@ -16,6 +16,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Kuganja Foundation uplifts vulnerable families in Uganda through holistic care, spiritual nourishment, mental health advocacy, creative expression, and skills development." },
       { property: "og:title", content: "Kuganja Foundation — Building Hope, Empowering Communities" },
       { property: "og:description", content: "Holistic care for vulnerable families in Namuwongo, Kampala, Uganda." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,

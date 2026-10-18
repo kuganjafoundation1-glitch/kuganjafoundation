@@ -3,10 +3,10 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { PROGRAMS } from "@/lib/site";
-import wellbeing from "@/assets/wellbeing.jpg";
-import hero from "@/assets/hero.jpg";
-import arts from "@/assets/arts.jpg";
-import cinema from "@/assets/cinema.jpg";
+import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
+import hero from "@/assets/impact-hero.jpg.asset.json";
+import arts from "@/assets/outreach-books-3.jpg.asset.json";
+import cinema from "@/assets/christmas-2.jpg.asset.json";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -15,21 +15,23 @@ export const Route = createFileRoute("/programs")({
       { name: "description", content: "Kuganja Foundation's five program areas: mental health and faith-based wellbeing, family support, arts and heritage, micro-empowerment, and skills development." },
       { property: "og:title", content: "Our Programs — Kuganja Foundation" },
       { property: "og:description", content: "Five program areas working together to heal the mind and equip the hands." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Programs,
 });
 
 const IMAGES: Record<string, { src: string; alt: string }> = {
-  "mental-health": { src: wellbeing, alt: "A community wellbeing conversation circle" },
-  "family-support": { src: hero, alt: "Families and volunteers in Namuwongo" },
-  "arts-culture": { src: arts, alt: "Youth painting and sewing African fabric" },
+  "mental-health": { src: wellbeing.url, alt: "Women learning together during an adult literacy class" },
+  "family-support": { src: hero.url, alt: "Families and volunteers with outreach supplies" },
+  "arts-culture": { src: arts.url, alt: "Women working with schoolbook pages during a skills development session" },
 };
 
 function Programs() {
   return (
     <>
-      <PageHero eyebrow="Our programs" title="Five areas of holistic care" image={arts}>
+      <PageHero eyebrow="Our programs" title="Five areas of holistic care" image={arts.url}>
         <p>From emotional healing to economic empowerment, each program serves vulnerable families and individuals.</p>
       </PageHero>
 
@@ -61,13 +63,13 @@ function Programs() {
                 )}
               </div>
               {img && (
-                <img src={img.src} alt={img.alt} loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+                <img src={img.src} alt={img.alt} loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
               )}
             </div>
             {p.id === "mental-health" && (
               <div className="container-site mt-14">
                 <div className="relative overflow-hidden rounded-lg bg-navy-deep">
-                  <img src={cinema} alt="Outdoor community film screening at dusk" loading="lazy" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover opacity-35" />
+                  <img src={cinema.url} alt="Children watching a film at the Christmas community celebration" loading="lazy" width={1024} height={768} className="absolute inset-0 h-full w-full object-cover opacity-35" />
                   <div className="relative p-8 md:p-12">
                     <p className="eyebrow">Highlighted initiative</p>
                     <h3 className="mt-3 text-2xl text-primary-foreground md:text-3xl">Inspirational Cinema Ministry</h3>

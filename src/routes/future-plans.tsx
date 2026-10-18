@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeartPulse, Clapperboard, Globe } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import cinema from "@/assets/cinema.jpg";
+import community from "@/assets/christmas2024-3.jpg.asset.json";
 
 export const Route = createFileRoute("/future-plans")({
   head: () => ({
@@ -10,6 +10,8 @@ export const Route = createFileRoute("/future-plans")({
       { name: "description", content: "Proposed initiatives of Kuganja Foundation: a wellness clinic, mobile outreach, family retreats, mobile cinema, a healing arts studio, and a digital platform." },
       { property: "og:title", content: "Future Plans — Kuganja Foundation" },
       { property: "og:description", content: "The foundation's proposed initiatives for holistic wellness, culture, and digital empowerment." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Future,
@@ -45,7 +47,7 @@ const GROUPS = [
 function Future() {
   return (
     <>
-      <PageHero eyebrow="Future plans" title="Where we hope to go next" image={cinema}>
+      <PageHero eyebrow="Future plans" title="Where we hope to go next" image={community.url}>
         <p>The initiatives below are proposed future plans. They are not yet operational.</p>
       </PageHero>
       {GROUPS.map(({ icon: Icon, title, items }, i) => (
