@@ -302,12 +302,6 @@ function Impact() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-site">
-          <SectionHeading eyebrow="Community voices" title="Stories of Hope" />
-          <div className="mt-10"><PlaceholderNote>Stories from beneficiaries and communities will be shared here, with their consent.</PlaceholderNote></div>
-        </div>
-      </section>
 
       <section className="section bg-muted">
         <div className="container-site">
