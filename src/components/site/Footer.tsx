@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Brand } from "./Header";
 import { CONTACT, NAV } from "@/lib/site";
-import tiktokIcon from "@/assets/icon-tiktok.png";
-import youtubeIcon from "@/assets/icon-youtube.png";
+import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   return (
@@ -34,10 +33,7 @@ export function Footer() {
             <li>WhatsApp: <a href={CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-gold">{CONTACT.whatsapp}</a></li>
             <li><a href={CONTACT.emailHref} className="break-all hover:text-gold">{CONTACT.email}</a></li>
             <li>{CONTACT.location}</li>
-            <li className="flex items-center gap-3 pt-1">
-              <img src={tiktokIcon} alt="Kuganja Foundation on TikTok" className="h-7 w-7" />
-              <img src={youtubeIcon} alt="Kuganja Foundation on YouTube" className="h-7 w-7" />
-            </li>
+            <li className="pt-1"><SocialLinks className="-ml-1.5" /></li>
           </ul>
         </div>
       </div>

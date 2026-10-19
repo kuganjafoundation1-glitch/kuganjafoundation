@@ -17,11 +17,19 @@ export const DONATION = {
   accountNumber: "3100128472",
 };
 
+export const SOCIAL = [
+  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=100069417340288" },
+  { name: "Instagram", href: "https://www.instagram.com/kuganjafoundation?utm_source=qr&dlrf=aWM3NWk4MTZkd3Vn" },
+  { name: "TikTok", href: "https://www.tiktok.com/@kuganjafoundation?_r=1&_t=ZS-9AgSEOO9qhY" },
+  { name: "YouTube", href: "https://youtube.com/@kuganjafoundation?si=y-bkJ3YUsIIh8IZn" },
+] as const;
+
 export const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/programs", label: "Our Programs" },
   { to: "/impact", label: "Our Impact" },
+  { to: "/events", label: "Upcoming Events" },
   { to: "/future-plans", label: "Future Plans" },
   { to: "/contact", label: "Contact" },
 ] as const;
