@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DonateRouteImport } from './routes/donate'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as FuturePlansRouteImport } from './routes/future-plans'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as ProgramsRouteImport } from './routes/programs'
@@ -37,6 +38,11 @@ const DonateRoute = DonateRouteImport.update({
   path: '/donate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FuturePlansRoute = FuturePlansRouteImport.update({
   id: '/future-plans',
   path: '/future-plans',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/future-plans': typeof FuturePlansRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/future-plans': typeof FuturePlansRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/future-plans': typeof FuturePlansRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/future-plans'
     | '/impact'
     | '/programs'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/future-plans'
     | '/impact'
     | '/programs'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/future-plans'
     | '/impact'
     | '/programs'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
+  EventsRoute: typeof EventsRoute
   FuturePlansRoute: typeof FuturePlansRoute
   ImpactRoute: typeof ImpactRoute
   ProgramsRoute: typeof ProgramsRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DonateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/future-plans': {
       id: '/future-plans'
       path: '/future-plans'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
+  EventsRoute: EventsRoute,
   FuturePlansRoute: FuturePlansRoute,
   ImpactRoute: ImpactRoute,
   ProgramsRoute: ProgramsRoute,

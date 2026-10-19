@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin, Users } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT } from "@/lib/site";
-import tiktokIcon from "@/assets/icon-tiktok.png";
-import youtubeIcon from "@/assets/icon-youtube.png";
+import { SocialLinks } from "@/components/site/SocialLinks";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -54,10 +53,7 @@ function Contact() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-soft text-primary"><Users className="h-5 w-5" /></span>
                 <div className="min-w-0">
                   <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Social Media</p>
-                  <div className="flex items-center gap-3 pt-1.5">
-                    <img src={tiktokIcon} alt="Kuganja Foundation on TikTok" className="h-7 w-7" />
-                    <img src={youtubeIcon} alt="Kuganja Foundation on YouTube" className="h-7 w-7" />
-                  </div>
+                  <SocialLinks className="-ml-1.5 pt-0.5" />
                 </div>
               </li>
             </ul>

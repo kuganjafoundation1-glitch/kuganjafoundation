@@ -186,7 +186,10 @@ function Index() {
               </li>
             ))}
           </ul>
-          <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/future-plans">View Future Plans</Link></Button>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button asChild variant="navy" size="lg"><Link to="/future-plans">View Future Plans</Link></Button>
+            <Button asChild variant="gold" size="lg"><Link to="/events">See Upcoming Events</Link></Button>
+          </div>
         </div>
       </section>
 
