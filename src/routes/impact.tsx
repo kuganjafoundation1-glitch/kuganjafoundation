@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PageHero, PlaceholderNote, SectionHeading } from "@/components/site/PageHero";
+import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import impactHero from "@/assets/impact-hero.jpg.asset.json";
 import outreach1 from "@/assets/outreach-books-1.jpg.asset.json";
 import outreach2 from "@/assets/outreach-books-2.jpg.asset.json";
