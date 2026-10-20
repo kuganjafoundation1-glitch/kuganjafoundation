@@ -3,6 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
+import { CHRISTMAS_OUTREACH_YEARS } from "@/lib/site";
+import christmasMeal1 from "@/assets/christmas-2024-meal-1.jpeg.asset.json";
+import christmasMeal2 from "@/assets/christmas-2024-meal-2.jpeg.asset.json";
 import impactHero from "@/assets/impact-hero.jpg.asset.json";
 import outreach1 from "@/assets/outreach-books-1.jpg.asset.json";
 import outreach2 from "@/assets/outreach-books-2.jpg.asset.json";
@@ -93,6 +96,11 @@ const CHRISTMAS_PHOTOS = [
 ];
 
 const CHRISTMAS2024_PHOTOS = [
+  { src: christmasMeal1.url, w: 561, h: 1280, alt: "A volunteer in a Santa hat sharing a meal with children at the 2024 Christmas outreach" },
+  { src: christmasMeal2.url, w: 561, h: 1280, alt: "A volunteer and children sharing food during the 2024 Christmas celebration" },
+];
+
+const CHRISTMAS2025_PHOTOS = [
   { src: christmas2024_1.url, w: 1070, h: 803, alt: "A volunteer in a Santa hat standing with a large crowd of children at the Christmas celebration" },
   { src: christmas2024_2.url, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
   { src: christmas2024_3.url, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
@@ -243,7 +251,7 @@ function Impact() {
           <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
             <div>
               <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
-              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">December 2023</p>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">December {CHRISTMAS_OUTREACH_YEARS.original}</p>
               <span className="gold-rule mt-4 block" />
               <p className="mt-5 text-lg text-foreground/85">
                 In December 2023, Kuganja Foundation organised a Christmas celebration for children living in slum communities,
@@ -273,10 +281,36 @@ function Impact() {
           <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
             <div>
               <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
-              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">2024</p>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">{CHRISTMAS_OUTREACH_YEARS.meal}</p>
               <span className="gold-rule mt-4 block" />
               <p className="mt-5 text-lg text-foreground/85">
-                Kuganja Foundation organised a Christmas celebration in 2024 to reach out to children and families living in slum
+                In 2024, Kuganja Foundation shared a Christmas meal with children and families, bringing care, joy, and
+                togetherness during the festive season.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {CHRISTMAS2024_PHOTOS.map((p) => (
+                <Button
+                  key={p.src}
+                  type="button"
+                  variant="ghost"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View photo full size: ${p.alt}`}
+                  className="group h-auto cursor-zoom-in overflow-hidden rounded-lg p-0 shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" width={p.w} height={p.h} className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]" />
+                </Button>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="text-2xl text-primary md:text-3xl">Christmas Outreach for Children and Families</h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-gold">{CHRISTMAS_OUTREACH_YEARS.celebration}</p>
+              <span className="gold-rule mt-4 block" />
+              <p className="mt-5 text-lg text-foreground/85">
+                Kuganja Foundation organised a Christmas celebration in {CHRISTMAS_OUTREACH_YEARS.celebration} to reach out to children and families living in slum
                 communities. The initiative brought festive cheer, care, and encouragement to vulnerable community members,
                 creating an opportunity to share the joy of Christmas and strengthen the spirit of community.
               </p>
@@ -286,7 +320,7 @@ function Impact() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {CHRISTMAS2024_PHOTOS.map((p) => (
+              {CHRISTMAS2025_PHOTOS.map((p) => (
                 <button
                   key={p.src}
                   type="button"
