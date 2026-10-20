@@ -8,7 +8,7 @@ import hero from "@/assets/home-hero.jpg.asset.json";
 const heroUrl = hero.url;
 import cinema from "@/assets/cinema.jpg";
 import arts from "@/assets/home-arts.jpg.asset.json";
-import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
+import donations from "@/assets/donations-group.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,7 +76,7 @@ function Index() {
             </SectionHeading>
             <Button asChild variant="navy" size="lg" className="mt-8"><Link to="/about">About Us <ArrowRight /></Link></Button>
           </div>
-          <img src={wellbeing.url} alt="Women holding papers during an adult literacy class at the community centre" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <img src={donations.url} alt="Kuganja Foundation volunteers standing with collected donations of clothes, bedding and bags" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
         </div>
       </section>
 

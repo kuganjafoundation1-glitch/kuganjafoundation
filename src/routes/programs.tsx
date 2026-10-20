@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { PROGRAMS } from "@/lib/site";
-import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
+import classWriting from "@/assets/class-writing.jpg.asset.json";
 import hero from "@/assets/impact-hero.jpg.asset.json";
 import arts from "@/assets/outreach-books-3.jpg.asset.json";
 import cinema from "@/assets/christmas-2.jpg.asset.json";
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/programs")({
 });
 
 const IMAGES: Record<string, { src: string; alt: string }> = {
-  "mental-health": { src: wellbeing.url, alt: "Women learning together during an adult literacy class" },
+  "mental-health": { src: classWriting.url, alt: "A woman taking notes during a community education class" },
   "family-support": { src: hero.url, alt: "Families and volunteers with outreach supplies" },
   "arts-culture": { src: arts.url, alt: "Women working with schoolbook pages during a skills development session" },
 };

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import hero from "@/assets/impact-hero.jpg.asset.json";
-import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
+import walk from "@/assets/outreach-walk.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -41,7 +41,7 @@ function About() {
               knowledge, we walk alongside our communities to break cycles of poverty and build resilient futures.
             </p>
           </SectionHeading>
-          <img src={wellbeing.url} alt="Women gathered during an adult literacy class" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <img src={walk.url} alt="Kuganja Foundation volunteers carrying donation bags through the community" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
         </div>
       </section>
 
