@@ -2,10 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
-import christmas from "@/assets/christmas-1.jpg.asset.json";
-import food from "@/assets/outreach-food-1.jpg.asset.json";
-import cinema from "@/assets/cinema.jpg";
-import wellbeing from "@/assets/home-wellbeing.jpg.asset.json";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -23,7 +19,7 @@ export const Route = createFileRoute("/events")({
 });
 
 type Item = { t?: string; d: string };
-const EVENTS: { date: string; title: string; tagline?: string; body: string[]; listTitle: string; items: Item[]; img: string; alt: string }[] = [
+const EVENTS: { date: string; title: string; tagline?: string; body: string[]; listTitle: string; items: Item[] }[] = [
   {
     date: "4th November 2026",
     title: "Year End Community Outreach",
@@ -33,8 +29,6 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
     ],
     listTitle: "What we are providing",
     items: [{ d: "Nutritious food" }, { d: "Clothing and footwear" }, { d: "Daily life necessities" }, { d: "Basic medical care" }, { d: "School items" }],
-    img: food.url,
-    alt: "Kuganja Foundation volunteers distributing food and clothing in the community",
   },
   {
     date: "12th December 2026",
@@ -47,8 +41,6 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
     ],
     listTitle: "We provide",
     items: [{ d: "A festive meal" }, { d: "Gifts & new clothes" }, { d: "A Christmas inspired movie" }, { d: "Fun and fellowship" }, { d: "A message of hope" }],
-    img: christmas.url,
-    alt: "Children at a previous Kuganja Foundation Christmas outreach",
   },
   {
     date: "9th January 2027",
@@ -62,8 +54,6 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
       { t: "Community Dialogues", d: "Guided open conversations after a film to safely share stories, process feelings, and support one another." },
       { t: "Healing Resources", d: "Free mental health self-care tools, professional contact information, and local wellness resources for anyone seeking extra guidance." },
     ],
-    img: cinema,
-    alt: "An outdoor community film screening at dusk",
   },
   {
     date: "2nd May 2027",
@@ -79,8 +69,6 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
       { t: "Stigma reduction campaign", d: "Community-wide outreach to break silences and normalize mental health discussions." },
       { t: "Strategic partnerships", d: "Collaborating with health professionals and local organizations for holistic care." },
     ],
-    img: wellbeing.url,
-    alt: "Women at a Kuganja Foundation community learning session",
   },
 ];
 
@@ -94,8 +82,7 @@ function EventsPage() {
       <section className="section">
         <div className="container-site space-y-8 md:space-y-10">
           {EVENTS.map((e) => (
-            <article key={e.title} className="card-elevated grid overflow-hidden md:grid-cols-[2fr_3fr]">
-              <img src={e.img} alt={e.alt} loading="lazy" className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
+            <article key={e.title} className="card-elevated overflow-hidden">
               <div className="p-6 md:p-9">
                 <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gold">
                   <CalendarDays className="h-4 w-4" /> {e.date}

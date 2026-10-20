@@ -1,5 +1,7 @@
 # Refinement roadmap (from user's pasted brief, Oct 15 2026)
 
+- [x] Correct Christmas outreach to 2025, add the uploaded two-photo 2024 outreach, and remove all Upcoming Events images
+
 - [x] Add homepage Meet Our Team with four supplied portraits and founder biography, followed by the uploaded Discover Kuganja Foundation video; verify playback and layout
 
 - [x] Replace remaining generated photos with appropriate uploaded photos; retain homepage Featured Initiative cinema background

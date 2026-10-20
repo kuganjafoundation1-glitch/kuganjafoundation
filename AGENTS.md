@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep homepage team portraits and video in a dedicated HomeTeam component; import CDN asset pointers so uploaded media stays out of source control.
+- Keep Christmas outreach year assignments in the shared site data and consume them in the impact page; this makes date corrections testable independently of presentation.

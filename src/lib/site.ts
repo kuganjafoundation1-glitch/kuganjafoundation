@@ -1,3 +1,9 @@
+export const CHRISTMAS_OUTREACH_YEARS = {
+  original: 2023,
+  meal: 2024,
+  celebration: 2025,
+} as const;
+
 export const CONTACT = {
   org: "Kuganja Foundation",
   phone: "+256 781 500 800",
