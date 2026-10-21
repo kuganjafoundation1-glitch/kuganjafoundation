@@ -2,11 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
-import { PROGRAMS } from "@/lib/site";
-import classWriting from "@/assets/class-writing.jpg.asset.json";
-import hero from "@/assets/impact-hero.jpg.asset.json";
-import arts from "@/assets/outreach-books-3.jpg.asset.json";
-import cinema from "@/assets/christmas-2.jpg.asset.json";
+import { PROGRAMS, SITE_URL } from "@/lib/site";
+import { christmas2, classWriting, impactHero, outreachBooks3 } from "@/lib/images";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -18,20 +15,21 @@ export const Route = createFileRoute("/programs")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/programs` }],
   }),
   component: Programs,
 });
 
 const IMAGES: Record<string, { src: string; alt: string }> = {
-  "mental-health": { src: classWriting.url, alt: "A woman taking notes during a community education class" },
-  "family-support": { src: hero.url, alt: "Families and volunteers with outreach supplies" },
-  "arts-culture": { src: arts.url, alt: "Women working with schoolbook pages during a skills development session" },
+  "mental-health": { src: classWriting, alt: "A woman taking notes during a community education class" },
+  "family-support": { src: impactHero, alt: "Families and volunteers with outreach supplies" },
+  "arts-culture": { src: outreachBooks3, alt: "Women working with schoolbook pages during a skills development session" },
 };
 
 function Programs() {
   return (
     <>
-      <PageHero eyebrow="Our programs" title="Five areas of holistic care" image={arts.url}>
+      <PageHero eyebrow="Our programs" title="Five areas of holistic care" image={outreachBooks3}>
         <p>From emotional healing to economic empowerment, each program serves vulnerable families and individuals.</p>
       </PageHero>
 
@@ -69,7 +67,7 @@ function Programs() {
             {p.id === "mental-health" && (
               <div className="container-site mt-14">
                 <div className="relative overflow-hidden rounded-lg bg-navy-deep">
-                  <img src={cinema.url} alt="Children watching a film at the Christmas community celebration" loading="lazy" width={1024} height={768} className="absolute inset-0 h-full w-full object-cover opacity-35" />
+                  <img src={christmas2} alt="Children watching a film at the Christmas community celebration" loading="lazy" width={1024} height={768} className="absolute inset-0 h-full w-full object-cover opacity-35" />
                   <div className="relative p-8 md:p-12">
                     <p className="eyebrow">Highlighted initiative</p>
                     <h3 className="mt-3 text-2xl text-primary-foreground md:text-3xl">Inspirational Cinema Ministry</h3>
@@ -87,7 +85,7 @@ function Programs() {
       <section className="section bg-primary">
         <div className="container-site text-center">
           <h2 className="text-3xl text-primary-foreground">Help sustain these programs</h2>
-          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate">How to Donate</Link></Button>
+          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="programs-cta">How to Donate</Link></Button>
         </div>
       </section>
     </>

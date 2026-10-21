@@ -14,6 +14,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { SITE_URL } from "@/lib/site";
+import { UMAMI_DOMAINS, UMAMI_SCRIPT_SRC, UMAMI_WEBSITE_ID } from "@/lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -84,7 +86,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Kuganja Foundation uplifts vulnerable families in Namuwongo, Kampala, Uganda." },
       { name: "author", content: "Kuganja Foundation" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `${SITE_URL}/home-hero.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_URL}/home-hero.jpg` },
+    ],
+    scripts: [
+      {
+        src: UMAMI_SCRIPT_SRC,
+        defer: true,
+        "data-website-id": UMAMI_WEBSITE_ID,
+        "data-domains": UMAMI_DOMAINS,
+      },
     ],
     links: [
       {

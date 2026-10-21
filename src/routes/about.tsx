@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import hero from "@/assets/impact-hero.jpg.asset.json";
-import walk from "@/assets/outreach-walk.jpg.asset.json";
+import { impactHero, outreachWalk } from "@/lib/images";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: About,
 });
@@ -28,7 +29,7 @@ const VALUES = [
 function About() {
   return (
     <>
-      <PageHero eyebrow="About us" title="Healing the mind while equipping the hands" image={hero.url}>
+      <PageHero eyebrow="About us" title="Healing the mind while equipping the hands" image={impactHero}>
         <p>A Ugandan charity walking alongside vulnerable families since 2018.</p>
       </PageHero>
 
@@ -41,7 +42,7 @@ function About() {
               knowledge, we walk alongside our communities to break cycles of poverty and build resilient futures.
             </p>
           </SectionHeading>
-          <img src={walk.url} alt="Kuganja Foundation volunteers carrying donation bags through the community" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <img src={outreachWalk} alt="Kuganja Foundation volunteers carrying donation bags through the community" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
         </div>
       </section>
 

@@ -46,6 +46,8 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           href={s.href}
           target="_blank"
           rel="noopener noreferrer"
+          data-umami-event="social-click"
+          data-umami-event-network={s.name}
           aria-label={`Kuganja Foundation on ${s.name} (opens in new tab)`}
           className="inline-flex h-10 w-10 items-center justify-center rounded-full transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-gold"
         >

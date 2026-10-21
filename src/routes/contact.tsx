@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin, Users } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { CONTACT } from "@/lib/site";
+import { CONTACT, SITE_URL } from "@/lib/site";
 import { SocialLinks } from "@/components/site/SocialLinks";
 
 export const Route = createFileRoute("/contact")({
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: Contact,
 });
@@ -42,7 +43,7 @@ function Contact() {
                   <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{k}</p>
                     {href ? (
-                      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="break-all font-semibold text-primary hover:text-gold">{v}</a>
+                      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="break-all font-semibold text-primary hover:text-gold" data-umami-event="contact-link" data-umami-event-type={k === "Telephone" ? "phone" : k === "WhatsApp" ? "whatsapp" : "email"}>{v}</a>
                     ) : (
                       <p className="font-semibold text-primary">{v}</p>
                     )}
