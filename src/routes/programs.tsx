@@ -85,7 +85,7 @@ function Programs() {
       <section className="section bg-primary">
         <div className="container-site text-center">
           <h2 className="text-3xl text-primary-foreground">Help sustain these programs</h2>
-          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate">How to Donate</Link></Button>
+          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="programs-cta">How to Donate</Link></Button>
         </div>
       </section>
     </>

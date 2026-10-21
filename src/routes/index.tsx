@@ -56,7 +56,7 @@ function Index() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild variant="gold" size="lg"><Link to="/programs">Explore Our Programs</Link></Button>
-            <Button asChild variant="heroOutline" size="lg"><Link to="/donate">Support Our Mission</Link></Button>
+            <Button asChild variant="heroOutline" size="lg"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="home-hero">Support Our Mission</Link></Button>
           </div>
         </div>
       </section>
@@ -200,7 +200,7 @@ function Index() {
             Your support can help Kuganja Foundation continue its commitment to uplifting vulnerable families and individuals and
             building resilient communities.
           </p>
-          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate">How to Donate</Link></Button>
+          <Button asChild variant="gold" size="lg" className="mt-8"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="home-donate-section">How to Donate</Link></Button>
         </div>
       </section>
 
@@ -219,7 +219,7 @@ function Index() {
                 <Icon className="h-5 w-5 text-gold" />
                 <p className="mt-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">{k}</p>
                 {href ? (
-                  <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="mt-1 block break-all font-semibold text-primary hover:text-gold">{v}</a>
+                  <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="mt-1 block break-all font-semibold text-primary hover:text-gold" data-umami-event="contact-link" data-umami-event-type={k === "Telephone" ? "phone" : k === "WhatsApp" ? "whatsapp" : "email"}>{v}</a>
                 ) : (
                   <p className="mt-1 font-semibold text-primary">{v}</p>
                 )}

@@ -435,7 +435,7 @@ function Impact() {
               ))}
             </div>
           </article>
-          <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/donate">Support Our Work</Link></Button>
+          <Button asChild variant="navy" size="lg" className="mt-10"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="impact-cta">Support Our Work</Link></Button>
         </div>
       </section>
 

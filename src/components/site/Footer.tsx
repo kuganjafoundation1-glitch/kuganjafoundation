@@ -13,7 +13,7 @@ export function Footer() {
             A charity organization in Namuwongo, Kampala, uplifting vulnerable families and individuals through holistic care,
             spiritual nourishment, mental health advocacy, creative expression, and practical skills.
           </p>
-          <Link to="/donate" className="mt-5 inline-block text-sm font-semibold text-gold hover:underline">
+          <Link to="/donate" className="mt-5 inline-block text-sm font-semibold text-gold hover:underline" data-umami-event="donate-click" data-umami-event-location="footer-about">
             How to donate →
           </Link>
         </div>
@@ -23,15 +23,15 @@ export function Footer() {
             {NAV.map((n) => (
               <li key={n.to}><Link to={n.to} className="hover:text-gold">{n.label}</Link></li>
             ))}
-            <li><Link to="/donate" className="hover:text-gold">Donate</Link></li>
+            <li><Link to="/donate" className="hover:text-gold" data-umami-event="donate-click" data-umami-event-location="footer-navigation">Donate</Link></li>
           </ul>
         </div>
         <div>
           <h2 className="text-sm font-bold uppercase tracking-widest text-primary-foreground">Contact</h2>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>Tel: <a href={CONTACT.phoneHref} className="hover:text-gold">{CONTACT.phone}</a></li>
-            <li>WhatsApp: <a href={CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-gold">{CONTACT.whatsapp}</a></li>
-            <li><a href={CONTACT.emailHref} className="break-all hover:text-gold">{CONTACT.email}</a></li>
+            <li>Tel: <a href={CONTACT.phoneHref} className="hover:text-gold" data-umami-event="contact-link" data-umami-event-type="phone">{CONTACT.phone}</a></li>
+            <li>WhatsApp: <a href={CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-gold" data-umami-event="contact-link" data-umami-event-type="whatsapp">{CONTACT.whatsapp}</a></li>
+            <li><a href={CONTACT.emailHref} className="break-all hover:text-gold" data-umami-event="contact-link" data-umami-event-type="email">{CONTACT.email}</a></li>
             <li>{CONTACT.location}</li>
             <li className="pt-1"><SocialLinks className="-ml-1.5" /></li>
           </ul>

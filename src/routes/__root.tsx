@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { SITE_URL } from "@/lib/site";
+import { UMAMI_DOMAINS, UMAMI_SCRIPT_SRC, UMAMI_WEBSITE_ID } from "@/lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -88,6 +89,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: `${SITE_URL}/home-hero.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE_URL}/home-hero.jpg` },
+    ],
+    scripts: [
+      {
+        src: UMAMI_SCRIPT_SRC,
+        defer: true,
+        "data-website-id": UMAMI_WEBSITE_ID,
+        "data-domains": UMAMI_DOMAINS,
+      },
     ],
     links: [
       {

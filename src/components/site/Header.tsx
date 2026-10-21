@@ -39,7 +39,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild variant="gold" className="hidden sm:inline-flex">
-            <Link to="/donate">Donate</Link>
+            <Link to="/donate" data-umami-event="donate-click" data-umami-event-location="header-desktop">Donate</Link>
           </Button>
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-md text-primary lg:hidden"
@@ -66,7 +66,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild variant="gold" className="mt-2">
-              <Link to="/donate" onClick={() => setOpen(false)}>Donate</Link>
+              <Link to="/donate" onClick={() => setOpen(false)} data-umami-event="donate-click" data-umami-event-location="header-mobile">Donate</Link>
             </Button>
           </div>
         </nav>

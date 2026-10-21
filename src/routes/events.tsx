@@ -107,7 +107,7 @@ function EventsPage() {
             </article>
           ))}
           <div className="text-center">
-            <Button asChild variant="gold" size="lg"><Link to="/donate">Support Our Events</Link></Button>
+            <Button asChild variant="gold" size="lg"><Link to="/donate" data-umami-event="donate-click" data-umami-event-location="events-cta">Support Our Events</Link></Button>
           </div>
         </div>
       </section>

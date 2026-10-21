@@ -43,7 +43,7 @@ function Contact() {
                   <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{k}</p>
                     {href ? (
-                      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="break-all font-semibold text-primary hover:text-gold">{v}</a>
+                      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="break-all font-semibold text-primary hover:text-gold" data-umami-event="contact-link" data-umami-event-type={k === "Telephone" ? "phone" : k === "WhatsApp" ? "whatsapp" : "email"}>{v}</a>
                     ) : (
                       <p className="font-semibold text-primary">{v}</p>
                     )}
