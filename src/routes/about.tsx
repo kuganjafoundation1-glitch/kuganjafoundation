@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { impactHero, outreachWalk } from "@/lib/images";
 import { SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -15,6 +16,12 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: `${SITE_URL}/about` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/about",
+      type: "AboutPage",
+      name: "About Us — Kuganja Foundation",
+      description: "Learn about Kuganja Foundation, founded in 2018 in Namuwongo, Kampala by Kasheija Martin — our story, vision, mission, and approach.",
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: About,

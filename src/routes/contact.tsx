@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin, Users } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT, SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 import { SocialLinks } from "@/components/site/SocialLinks";
 
 export const Route = createFileRoute("/contact")({
@@ -15,6 +16,12 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: `${SITE_URL}/contact` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/contact",
+      type: "ContactPage",
+      name: "Contact — Kuganja Foundation",
+      description: "Contact Kuganja Foundation in Namuwongo, Kampala: +256 781 500 800, WhatsApp +256 703 264 035, Kuganjafoundation1@gmail.com.",
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: Contact,

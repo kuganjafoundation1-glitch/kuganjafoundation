@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { CHRISTMAS_OUTREACH_YEARS, SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 import {
   christmas1,
   christmas2,
@@ -51,6 +52,12 @@ export const Route = createFileRoute("/impact")({
       { property: "og:url", content: `${SITE_URL}/impact` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/impact",
+      type: "WebPage",
+      name: "Our Impact — Kuganja Foundation",
+      description: "How Kuganja Foundation's community-centered approach supports vulnerable families in Namuwongo, Kampala.",
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/impact` }],
   }),
   component: Impact,

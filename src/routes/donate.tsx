@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Copy, Check, Smartphone, Landmark } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { DONATION, SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -15,6 +16,12 @@ export const Route = createFileRoute("/donate")({
       { property: "og:url", content: `${SITE_URL}/donate` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/donate",
+      type: "WebPage",
+      name: "Donate — Kuganja Foundation",
+      description: "Support Kuganja Foundation via MTN Mobile Money, Airtel Money, or bank transfer to Centenary Bank.",
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/donate` }],
   }),
   component: Donate,

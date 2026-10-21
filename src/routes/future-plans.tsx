@@ -3,6 +3,7 @@ import { HeartPulse, Clapperboard, Globe } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { christmas2024_3 } from "@/lib/images";
 import { SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/future-plans")({
   head: () => ({
@@ -15,6 +16,12 @@ export const Route = createFileRoute("/future-plans")({
       { property: "og:url", content: `${SITE_URL}/future-plans` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/future-plans",
+      type: "WebPage",
+      name: "Future Plans — Kuganja Foundation",
+      description: "Proposed initiatives of Kuganja Foundation: a wellness clinic, mobile outreach, family retreats, mobile cinema, a healing arts studio, and a digital platform.",
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/future-plans` }],
   }),
   component: Future,

@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { PROGRAMS, SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 import { christmas2, classWriting, impactHero, outreachBooks3 } from "@/lib/images";
 
 export const Route = createFileRoute("/programs")({
@@ -16,6 +17,13 @@ export const Route = createFileRoute("/programs")({
       { property: "og:url", content: `${SITE_URL}/programs` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/programs",
+      type: "WebPage",
+      name: "Our Programs — Kuganja Foundation",
+      description: "Kuganja Foundation's five program areas: mental health and faith-based wellbeing, family support, arts and heritage, micro-empowerment, and skills development.",
+      includePrograms: true,
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/programs` }],
   }),
   component: Programs,

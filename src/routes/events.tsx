@@ -3,6 +3,7 @@ import { CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -15,6 +16,13 @@ export const Route = createFileRoute("/events")({
       { property: "og:url", content: `${SITE_URL}/events` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/events",
+      type: "CollectionPage",
+      name: "Upcoming Events — Kuganja Foundation",
+      description: "Upcoming Kuganja Foundation events: Year-End Community Outreach, the slum Christmas Party, the Moving Mobile Cinema launch, and the Mental Health & Emotional Wellbeing Initiative.",
+      includeEvents: true,
+    }))],
     links: [{ rel: "canonical", href: `${SITE_URL}/events` }],
   }),
   component: EventsPage,

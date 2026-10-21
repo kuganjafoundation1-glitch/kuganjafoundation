@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/PageHero";
 import { HomeTeam } from "@/components/site/HomeTeam";
 import { CONTACT, PROGRAMS, SITE_URL } from "@/lib/site";
+import { buildSchemaGraph, jsonLdScript } from "@/lib/schema";
 import cinema from "@/assets/cinema.jpg";
 import { donationsGroup, homeArts, homeHero } from "@/lib/images";
 
@@ -18,6 +19,13 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [jsonLdScript(buildSchemaGraph({
+      path: "/",
+      type: "WebPage",
+      name: "Kuganja Foundation — Building Hope in Namuwongo, Kampala",
+      description: "Kuganja Foundation uplifts vulnerable families in Uganda through holistic care, spiritual nourishment, mental health advocacy, creative expression, and skills development.",
+      aboutOrganization: true,
+    }))],
     links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Index,
