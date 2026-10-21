@@ -98,3 +98,4 @@ export const PROGRAMS = [
     items: [],
   },
 ] as const;
+export const SITE_URL = "https://kuganja-foundation.kuganjafoundation1.workers.dev";

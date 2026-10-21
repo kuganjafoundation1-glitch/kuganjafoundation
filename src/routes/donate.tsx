@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Copy, Check, Smartphone, Landmark } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { DONATION } from "@/lib/site";
+import { DONATION, SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/donate")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/donate` }],
   }),
   component: Donate,
 });

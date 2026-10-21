@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin, Users } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { CONTACT } from "@/lib/site";
+import { CONTACT, SITE_URL } from "@/lib/site";
 import { SocialLinks } from "@/components/site/SocialLinks";
 
 export const Route = createFileRoute("/contact")({
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: Contact,
 });

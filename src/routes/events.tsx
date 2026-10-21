@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/events")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://kuganjafoundation.lovable.app/events" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/events` }],
   }),
   component: EventsPage,
 });

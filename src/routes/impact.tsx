@@ -3,40 +3,42 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import { CHRISTMAS_OUTREACH_YEARS } from "@/lib/site";
-import christmasMeal1 from "@/assets/christmas-2024-meal-1.jpeg.asset.json";
-import christmasMeal2 from "@/assets/christmas-2024-meal-2.jpeg.asset.json";
-import impactHero from "@/assets/impact-hero.jpg.asset.json";
-import outreach1 from "@/assets/outreach-books-1.jpg.asset.json";
-import outreach2 from "@/assets/outreach-books-2.jpg.asset.json";
-import outreach3 from "@/assets/outreach-books-3.jpg.asset.json";
-import outreach4 from "@/assets/outreach-books-4.jpg.asset.json";
-import literacy1 from "@/assets/literacy-1.jpg.asset.json";
-import literacy2 from "@/assets/literacy-2.jpg.asset.json";
-import literacy3 from "@/assets/literacy-3.jpg.asset.json";
-import literacy4 from "@/assets/literacy-4.jpg.asset.json";
-import mothers1 from "@/assets/mothers-1.jpg.asset.json";
-import mothers2 from "@/assets/mothers-2.jpg.asset.json";
-import mothers3 from "@/assets/mothers-3.jpg.asset.json";
-import mothers4 from "@/assets/mothers-4.jpg.asset.json";
-import covid1 from "@/assets/covid-1.jpg.asset.json";
-import covid2 from "@/assets/covid-2.jpg.asset.json";
-import covid3 from "@/assets/covid-3.jpg.asset.json";
-import covid4 from "@/assets/covid-4.jpg.asset.json";
-import christmas1 from "@/assets/christmas-1.jpg.asset.json";
-import christmas2 from "@/assets/christmas-2.jpg.asset.json";
-import christmas3 from "@/assets/christmas-3.jpg.asset.json";
-import christmas4 from "@/assets/christmas-4.jpg.asset.json";
-import christmas2024_1 from "@/assets/christmas2024-1.jpg.asset.json";
-import christmas2024_2 from "@/assets/christmas2024-2.jpg.asset.json";
-import christmas2024_3 from "@/assets/christmas2024-3.jpg.asset.json";
-import christmas2024_4 from "@/assets/christmas2024-4.jpg.asset.json";
-import cleaning1 from "@/assets/cleaning-1.jpg.asset.json";
-import cleaning2 from "@/assets/cleaning-2.jpg.asset.json";
-import food1 from "@/assets/outreach-food-1.jpg.asset.json";
-import food2 from "@/assets/outreach-food-2.jpg.asset.json";
-import food3 from "@/assets/outreach-food-3.jpg.asset.json";
-import food4 from "@/assets/outreach-food-4.jpg.asset.json";
+import { CHRISTMAS_OUTREACH_YEARS, SITE_URL } from "@/lib/site";
+import {
+  christmas1,
+  christmas2,
+  christmas3,
+  christmas4,
+  christmas2024Meal1,
+  christmas2024Meal2,
+  christmas2024_1,
+  christmas2024_2,
+  christmas2024_3,
+  christmas2024_4,
+  cleaning1,
+  cleaning2,
+  covid1,
+  covid2,
+  covid3,
+  covid4,
+  impactHero,
+  literacy1,
+  literacy2,
+  literacy3,
+  literacy4,
+  mothers1,
+  mothers2,
+  mothers3,
+  mothers4,
+  outreachBooks1,
+  outreachBooks2,
+  outreachBooks3,
+  outreachBooks4,
+  outreachFood1,
+  outreachFood2,
+  outreachFood3,
+  outreachFood4,
+} from "@/lib/images";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -48,6 +50,7 @@ export const Route = createFileRoute("/impact")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/impact` }],
   }),
   component: Impact,
 });
@@ -61,62 +64,62 @@ const OBJECTIVES = [
 ];
 
 const OUTREACH_PHOTOS = [
-  { src: outreach1.url, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
-  { src: outreach2.url, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
-  { src: outreach3.url, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
-  { src: outreach4.url, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
+  { src: outreachBooks1, w: 1070, h: 713, alt: "Women gathered for a skills development session with learning charts on the wall" },
+  { src: outreachBooks2, w: 1070, h: 713, alt: "Participants sorting stacks of printed schoolbook pages" },
+  { src: outreachBooks3, w: 1070, h: 713, alt: "A woman reviewing schoolbook pages during a skills training session" },
+  { src: outreachBooks4, w: 720, h: 960, alt: "A stack of completed schoolbooks produced by the group" },
 ];
 
 const LITERACY_PHOTOS = [
-  { src: literacy1.url, w: 1070, h: 713, alt: "Women practising reading and writing during an adult literacy class" },
-  { src: literacy2.url, w: 1070, h: 713, alt: "Adult literacy class participants learning together" },
-  { src: literacy3.url, w: 1070, h: 713, alt: "Women taking part in an adult literacy session" },
-  { src: literacy4.url, w: 1070, h: 713, alt: "Participants of the adult literacy program for women" },
+  { src: literacy1, w: 1070, h: 713, alt: "Women practising reading and writing during an adult literacy class" },
+  { src: literacy2, w: 1070, h: 713, alt: "Adult literacy class participants learning together" },
+  { src: literacy3, w: 1070, h: 713, alt: "Women taking part in an adult literacy session" },
+  { src: literacy4, w: 1070, h: 713, alt: "Participants of the adult literacy program for women" },
 ];
 
 const MOTHERS_PHOTOS = [
-  { src: mothers1.url, w: 600, h: 900, alt: "A single mother cooking food at her small food-vending business" },
-  { src: mothers2.url, w: 600, h: 900, alt: "A mother preparing food at her roadside stall to earn an income" },
-  { src: mothers3.url, w: 600, h: 900, alt: "A mother sorting charcoal to sell at her small business" },
-  { src: mothers4.url, w: 1070, h: 713, alt: "A mother selling charcoal and green bananas at her market stall" },
+  { src: mothers1, w: 600, h: 900, alt: "A single mother cooking food at her small food-vending business" },
+  { src: mothers2, w: 600, h: 900, alt: "A mother preparing food at her roadside stall to earn an income" },
+  { src: mothers3, w: 600, h: 900, alt: "A mother sorting charcoal to sell at her small business" },
+  { src: mothers4, w: 1070, h: 713, alt: "A mother selling charcoal and green bananas at her market stall" },
 ];
 
 const COVID_PHOTOS = [
-  { src: covid1.url, w: 1070, h: 803, alt: "A volunteer handing a bag of relief supplies to a young man outside a home" },
-  { src: covid2.url, w: 612, h: 816, alt: "A woman carrying bags of relief food supplies to distribute" },
-  { src: covid3.url, w: 1032, h: 774, alt: "Foundation volunteers handing a food package to a woman in her home" },
-  { src: covid4.url, w: 1032, h: 774, alt: "Packed relief food parcels and supplies prepared for distribution" },
+  { src: covid1, w: 1070, h: 803, alt: "A volunteer handing a bag of relief supplies to a young man outside a home" },
+  { src: covid2, w: 612, h: 816, alt: "A woman carrying bags of relief food supplies to distribute" },
+  { src: covid3, w: 1032, h: 774, alt: "Foundation volunteers handing a food package to a woman in her home" },
+  { src: covid4, w: 1032, h: 774, alt: "Packed relief food parcels and supplies prepared for distribution" },
 ];
 
 const CHRISTMAS_PHOTOS = [
-  { src: christmas1.url, w: 1070, h: 713, alt: "Volunteers in Santa hats handing Christmas hampers to families in a slum alley" },
-  { src: christmas2.url, w: 1024, h: 768, alt: "Children gathered under decorated tarpaulin watching a movie screening at the Christmas celebration" },
-  { src: christmas3.url, w: 1070, h: 713, alt: "A volunteer handing a green Christmas hamper to a family outside their home" },
-  { src: christmas4.url, w: 1070, h: 713, alt: "A woman joyfully carrying a Christmas hamper after receiving it" },
+  { src: christmas1, w: 1070, h: 713, alt: "Volunteers in Santa hats handing Christmas hampers to families in a slum alley" },
+  { src: christmas2, w: 1024, h: 768, alt: "Children gathered under decorated tarpaulin watching a movie screening at the Christmas celebration" },
+  { src: christmas3, w: 1070, h: 713, alt: "A volunteer handing a green Christmas hamper to a family outside their home" },
+  { src: christmas4, w: 1070, h: 713, alt: "A woman joyfully carrying a Christmas hamper after receiving it" },
 ];
 
 const CHRISTMAS2024_PHOTOS = [
-  { src: christmasMeal1.url, w: 561, h: 1280, alt: "A volunteer in a Santa hat sharing a meal with children at the 2024 Christmas outreach" },
-  { src: christmasMeal2.url, w: 561, h: 1280, alt: "A volunteer and children sharing food during the 2024 Christmas celebration" },
+  { src: christmas2024Meal1, w: 561, h: 1280, alt: "A volunteer in a Santa hat sharing a meal with children at the 2024 Christmas outreach" },
+  { src: christmas2024Meal2, w: 561, h: 1280, alt: "A volunteer and children sharing food during the 2024 Christmas celebration" },
 ];
 
 const CHRISTMAS2025_PHOTOS = [
-  { src: christmas2024_1.url, w: 1070, h: 803, alt: "A volunteer in a Santa hat standing with a large crowd of children at the Christmas celebration" },
-  { src: christmas2024_2.url, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
-  { src: christmas2024_3.url, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
-  { src: christmas2024_4.url, w: 1070, h: 803, alt: "Volunteers in Santa hats posing with families after distributing Christmas gifts" },
+  { src: christmas2024_1, w: 1070, h: 803, alt: "A volunteer in a Santa hat standing with a large crowd of children at the Christmas celebration" },
+  { src: christmas2024_2, w: 810, h: 1080, alt: "A volunteer in a Santa hat handing a gift bag to a woman in a red dress" },
+  { src: christmas2024_3, w: 1070, h: 803, alt: "Children cheering with their hands raised during the Christmas celebration" },
+  { src: christmas2024_4, w: 1070, h: 803, alt: "Volunteers in Santa hats posing with families after distributing Christmas gifts" },
 ];
 
 const CLEANING_PHOTOS = [
-  { src: cleaning1.url, w: 1024, h: 768, alt: "A volunteer standing in front of a sanitation truck during the emptying of a community latrine" },
-  { src: cleaning2.url, w: 1024, h: 768, alt: "Workers emptying a shared community latrine with a hose and sanitation truck as residents watch" },
+  { src: cleaning1, w: 1024, h: 768, alt: "A volunteer standing in front of a sanitation truck during the emptying of a community latrine" },
+  { src: cleaning2, w: 1024, h: 768, alt: "Workers emptying a shared community latrine with a hose and sanitation truck as residents watch" },
 ];
 
 const FOOD_PHOTOS = [
-  { src: food1.url, w: 1280, h: 853, alt: "Kuganja Foundation volunteers distributing food supplies and clothing to community members" },
-  { src: food2.url, w: 1280, h: 853, alt: "Volunteers handing out food supplies and clothing during the community outreach" },
-  { src: food3.url, w: 1280, h: 853, alt: "Volunteers sharing food supplies and clothing with vulnerable community members" },
-  { src: food4.url, w: 853, h: 1280, alt: "Volunteers distributing food supplies and clothing during the community outreach" },
+  { src: outreachFood1, w: 1280, h: 853, alt: "Kuganja Foundation volunteers distributing food supplies and clothing to community members" },
+  { src: outreachFood2, w: 1280, h: 853, alt: "Volunteers handing out food supplies and clothing during the community outreach" },
+  { src: outreachFood3, w: 1280, h: 853, alt: "Volunteers sharing food supplies and clothing with vulnerable community members" },
+  { src: outreachFood4, w: 853, h: 1280, alt: "Volunteers distributing food supplies and clothing during the community outreach" },
 ];
 
 type Photo = (typeof OUTREACH_PHOTOS)[number];
@@ -134,7 +137,7 @@ function Impact() {
 
   return (
     <>
-      <PageHero eyebrow="Our impact" title="Change that starts in the community" image={impactHero.url}>
+      <PageHero eyebrow="Our impact" title="Change that starts in the community" image={impactHero}>
         <p>We walk alongside our communities — listening, responding, and building resilience together.</p>
       </PageHero>
 
