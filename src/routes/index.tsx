@@ -3,12 +3,9 @@ import { HandHeart, Sparkles, Brain, Church, Phone, Mail, MapPin, MessageCircle,
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/PageHero";
 import { HomeTeam } from "@/components/site/HomeTeam";
-import { CONTACT, PROGRAMS } from "@/lib/site";
-import hero from "@/assets/home-hero.jpg.asset.json";
-const heroUrl = hero.url;
+import { CONTACT, PROGRAMS, SITE_URL } from "@/lib/site";
 import cinema from "@/assets/cinema.jpg";
-import arts from "@/assets/home-arts.jpg.asset.json";
-import donations from "@/assets/donations-group.jpg.asset.json";
+import { donationsGroup, homeArts, homeHero } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,6 +17,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Index,
 });
@@ -45,7 +43,7 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary">
-        <img src={heroUrl} alt="Kuganja Foundation volunteers carrying food supplies through the streets of Namuwongo, Kampala" width={1280} height={853} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={homeHero} alt="Kuganja Foundation volunteers carrying food supplies through the streets of Namuwongo, Kampala" width={1280} height={853} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-site relative py-24 md:py-36">
           <p className="eyebrow">Namuwongo · Kampala · Uganda</p>
@@ -76,7 +74,7 @@ function Index() {
             </SectionHeading>
             <Button asChild variant="navy" size="lg" className="mt-8"><Link to="/about">About Us <ArrowRight /></Link></Button>
           </div>
-          <img src={donations.url} alt="Kuganja Foundation volunteers standing with collected donations of clothes, bedding and bags" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <img src={donationsGroup} alt="Kuganja Foundation volunteers standing with collected donations of clothes, bedding and bags" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
         </div>
       </section>
 
@@ -129,7 +127,7 @@ function Index() {
               </article>
             ))}
             <div className="relative overflow-hidden rounded-lg">
-              <img src={arts.url} alt="Women writing notes during a community education session" loading="lazy" width={1070} height={713} className="h-full min-h-64 w-full object-cover" />
+              <img src={homeArts} alt="Women writing notes during a community education session" loading="lazy" width={1070} height={713} className="h-full min-h-64 w-full object-cover" />
             </div>
           </div>
         </div>
