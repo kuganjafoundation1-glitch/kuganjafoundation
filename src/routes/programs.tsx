@@ -13,6 +13,7 @@ export const Route = createFileRoute("/programs")({
       { property: "og:title", content: "Our Programs — Kuganja Foundation" },
       { property: "og:description", content: "Five program areas working together to heal the mind and equip the hands." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/programs` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/programs` }],

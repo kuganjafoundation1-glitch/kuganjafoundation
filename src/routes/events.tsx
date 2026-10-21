@@ -12,6 +12,7 @@ export const Route = createFileRoute("/events")({
       { property: "og:title", content: "Upcoming Events — Kuganja Foundation" },
       { property: "og:description", content: "Program details and schedules for Kuganja Foundation's upcoming community events and initiatives." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/events` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/events` }],

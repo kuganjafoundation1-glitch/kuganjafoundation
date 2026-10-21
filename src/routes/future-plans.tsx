@@ -12,6 +12,7 @@ export const Route = createFileRoute("/future-plans")({
       { property: "og:title", content: "Future Plans — Kuganja Foundation" },
       { property: "og:description", content: "The foundation's proposed initiatives for holistic wellness, culture, and digital empowerment." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/future-plans` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/future-plans` }],

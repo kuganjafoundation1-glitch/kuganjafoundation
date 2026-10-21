@@ -12,6 +12,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Kuganja Foundation" },
       { property: "og:description", content: "Reach us by phone, WhatsApp, or email in Namuwongo, Kampala, Uganda." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/contact` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],

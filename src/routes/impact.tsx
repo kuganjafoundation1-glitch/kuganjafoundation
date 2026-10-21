@@ -48,6 +48,7 @@ export const Route = createFileRoute("/impact")({
       { property: "og:title", content: "Our Impact — Kuganja Foundation" },
       { property: "og:description", content: "Our community-centered approach, objectives, and documented achievements." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/impact` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/impact` }],
