@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
-import { CheckCircle2, AlertCircle, Send } from "lucide-react";
-import { contactSchema, sendContactMessage, type ContactInput } from "@/lib/contact.functions";
+import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
+import { contactSchema, type ContactInput } from "@/lib/contact-schema";
 import { CONTACT } from "@/lib/site";
 
 const EMPTY: ContactInput = { name: "", email: "", phone: "", subject: "", message: "" };
@@ -15,22 +14,16 @@ const FIELDS: { key: keyof ContactInput; label: string; type?: string; required:
 ];
 
 export function ContactForm() {
-  const send = useServerFn(sendContactMessage);
   const [values, setValues] = useState<ContactInput>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "unavailable" | "error">("idle");
+  const [sentVia, setSentVia] = useState<"" | "WhatsApp" | "your email app">("");
 
   const update = (k: keyof ContactInput, v: string) => {
     setValues((s) => ({ ...s, [k]: v }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   };
 
-  const mailto = `${CONTACT.emailHref}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(
-    `${values.message}\n\n${values.name}${values.phone ? `\n${values.phone}` : ""}\n${values.email}`,
-  )}`;
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const submit = (via: "whatsapp" | "email") => {
     const parsed = contactSchema.safeParse(values);
     if (!parsed.success) {
       const next: Errors = {};
@@ -39,20 +32,18 @@ export function ContactForm() {
         if (!next[k]) next[k] = issue.message;
       }
       setErrors(next);
-      setStatus("idle");
+      setSentVia("");
       return;
     }
-    setStatus("sending");
-    try {
-      const res = await send({ data: parsed.data });
-      if (res.ok) {
-        setStatus("sent");
-        setValues(EMPTY);
-      } else {
-        setStatus("unavailable");
-      }
-    } catch {
-      setStatus("error");
+    const d = parsed.data;
+    const details = `Name: ${d.name}\nEmail: ${d.email}${d.phone ? `\nPhone: ${d.phone}` : ""}`;
+    if (via === "whatsapp") {
+      const text = `Subject: ${d.subject}\n\n${d.message}\n\n${details}`;
+      window.open(`${CONTACT.whatsappHref}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+      setSentVia("WhatsApp");
+    } else {
+      window.location.href = `${CONTACT.emailHref}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(`${d.message}\n\n${details}`)}`;
+      setSentVia("your email app");
     }
   };
 
@@ -65,7 +56,7 @@ export function ContactForm() {
       <span className="gold-rule mt-4" />
       <p className="mt-4 text-muted-foreground">Fields marked * are required.</p>
 
-      <form onSubmit={onSubmit} noValidate className="mt-6 space-y-5">
+      <form onSubmit={(e) => { e.preventDefault(); submit("whatsapp"); }} noValidate className="mt-6 space-y-5">
         <div className="grid gap-5 sm:grid-cols-2">
           {FIELDS.map((f) => (
             <div key={f.key}>
@@ -102,30 +93,23 @@ export function ContactForm() {
         </div>
 
         <div aria-live="polite">
-          {status === "sent" && (
+          {sentVia && (
             <p className="flex gap-2 rounded-md bg-gold-soft p-3 text-primary">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" /> Thank you — your message has been sent. We'll get back to you soon.
-            </p>
-          )}
-          {(status === "unavailable" || status === "error") && (
-            <p className="flex gap-2 rounded-md border border-destructive/40 bg-destructive/5 p-3 text-foreground">
-              <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
-              <span>
-                Your message could not be sent{status === "unavailable" ? " — online messaging isn't available yet" : ""}. Please{" "}
-                <a href={mailto} className="font-semibold text-primary underline hover:text-gold">email us directly</a>{" "}
-                or call {CONTACT.phone}.
-              </span>
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+              <span>Your message is ready in {sentVia}. Please press send there to deliver it to us.</span>
             </p>
           )}
         </div>
 
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-60"
-        >
-          <Send className="h-4 w-4" /> {status === "sending" ? "Sending…" : "Send Message"}
-        </button>
+        <div className="flex flex-wrap gap-3">
+          <button type="submit" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:bg-primary/90">
+            <MessageCircle className="h-4 w-4" /> Send Message via WhatsApp
+          </button>
+          <button type="button" onClick={() => submit("email")} className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary/5">
+            <Mail className="h-4 w-4" /> Send by Email
+          </button>
+        </div>
+        <p className="text-sm text-muted-foreground">Messages go to WhatsApp {CONTACT.whatsapp} or {CONTACT.email}.</p>
       </form>
     </div>
   );
