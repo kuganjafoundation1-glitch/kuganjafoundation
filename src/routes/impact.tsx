@@ -343,7 +343,7 @@ function Impact() {
 
       <section className="section bg-muted">
         <div className="container-site">
-          <SectionHeading eyebrow="Gallery" title="Outreach & Events" />
+          <SectionHeading eyebrow="Gallery" title="Outreach and Events" />
           <article className="mt-10">
             <h3 className="text-2xl text-primary md:text-3xl">Empowering Women Through Skills Development</h3>
             <span className="gold-rule mt-4 block" />

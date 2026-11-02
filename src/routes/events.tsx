@@ -8,7 +8,7 @@ export const Route = createFileRoute("/events")({
   head: () => ({
     meta: [
       { title: "Upcoming Events — Kuganja Foundation" },
-      { name: "description", content: "Upcoming Kuganja Foundation events: Year-End Community Outreach, the slum Christmas Party, the Moving Mobile Cinema launch, and the Mental Health & Emotional Wellbeing Initiative." },
+      { name: "description", content: "Upcoming Kuganja Foundation events: Year-End Community Outreach, the slum Christmas Party, the Moving Mobile Cinema launch, and the Mental Health and Emotional Wellbeing Initiative." },
       { property: "og:title", content: "Upcoming Events — Kuganja Foundation" },
       { property: "og:description", content: "Program details and schedules for Kuganja Foundation's upcoming community events and initiatives." },
       { property: "og:type", content: "website" },
@@ -42,7 +42,7 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
       "What the day looks like: When the child arrives, the heavy weight of everyday hardship is replaced with music, games, and laughter. Thanks to the generosity of our supporters, we provide fun and fellowship.",
     ],
     listTitle: "We provide",
-    items: [{ d: "A festive meal" }, { d: "Gifts & new clothes" }, { d: "A Christmas inspired movie" }, { d: "Fun and fellowship" }, { d: "A message of hope" }],
+    items: [{ d: "A festive meal" }, { d: "Gifts and new clothes" }, { d: "A Christmas inspired movie" }, { d: "Fun and fellowship" }, { d: "A message of hope" }],
   },
   {
     date: "9th January 2027",
@@ -59,7 +59,7 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
   },
   {
     date: "2nd May 2027",
-    title: "Mental Health & Emotional Wellbeing Initiative",
+    title: "Mental Health and Emotional Wellbeing Initiative",
     body: [
       "We will be launching a new initiative and expanding the mission to address mental health and emotional wellbeing. We have always committed ourselves to supporting our community's core needs.",
       "Our program aims to dismantle the stigma surrounding mental health illness, provide accessible community-based resources, and offer a safe, supportive environment for anyone navigating mental health challenges.",
@@ -77,7 +77,7 @@ const EVENTS: { date: string; title: string; tagline?: string; body: string[]; l
 function EventsPage() {
   return (
     <>
-      <PageHero eyebrow="Upcoming events & community initiatives" title="Upcoming Events">
+      <PageHero eyebrow="Upcoming events and community initiatives" title="Upcoming Events">
         <p>Program details, schedules, and key pillars of what's coming next at Kuganja Foundation.</p>
       </PageHero>
 
