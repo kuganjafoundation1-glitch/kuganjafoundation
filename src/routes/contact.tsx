@@ -3,6 +3,7 @@ import { Phone, MessageCircle, Mail, MapPin, Users } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT, SITE_URL } from "@/lib/site";
 import { SocialLinks } from "@/components/site/SocialLinks";
+import { ContactForm } from "@/components/site/ContactForm";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -33,7 +34,9 @@ function Contact() {
         <p>Reach Kuganja Foundation through any of our official channels.</p>
       </PageHero>
       <section className="section">
-        <div className="container-site grid gap-10 md:grid-cols-[1fr_1.3fr]">
+        <div className="container-site grid gap-10 lg:grid-cols-[1.25fr_1fr]">
+          <ContactForm />
+          <div className="space-y-8">
           <div>
             <h2 className="text-2xl">Kuganja Foundation</h2>
             <span className="gold-rule mt-4" />
@@ -64,10 +67,11 @@ function Contact() {
             <iframe
               title="Map of Namuwongo, Kampala, Uganda"
               src="https://www.google.com/maps?q=Namuwongo,+Kampala,+Uganda&output=embed"
-              className="h-[420px] w-full"
+              className="h-[320px] w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+          </div>
           </div>
         </div>
       </section>
