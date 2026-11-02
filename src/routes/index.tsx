@@ -25,18 +25,18 @@ export const Route = createFileRoute("/")({
 
 const VALUES = [
   { icon: HandHeart, t: "Community Outreach", d: "Delivering essential resources, relief, and direct support to vulnerable families." },
-  { icon: Sparkles, t: "Spiritual Nourishment & Motivation", d: "Sharing faith, hope, and motivation to uplift the soul and build strong community foundations." },
-  { icon: Brain, t: "Mental Health Awareness & Wellbeing", d: "Hosting community workshops to combat stigma, teach mindfulness, and promote emotional wellbeing." },
+  { icon: Sparkles, t: "Spiritual Nourishment and Motivation", d: "Sharing faith, hope, and motivation to uplift the soul and build strong community foundations." },
+  { icon: Brain, t: "Mental Health Awareness and Wellbeing", d: "Hosting community workshops to combat stigma, teach mindfulness, and promote emotional wellbeing." },
   { icon: Church, t: "Faith-Based Spiritual Guidance", d: "Nurturing inner strength and hope by anchoring psychosocial care in a compassionate spiritual foundation." },
 ];
 
 const FUTURE = [
-  "Community Counseling & Wellness Clinic",
-  "Mobile Outreach & Support Units",
+  "Community Counseling and Wellness Clinic",
+  "Mobile Outreach and Support Units",
   "Family Restoration Retreats",
-  "Inspirational Mobile Cinema & Festivals",
+  "Inspirational Mobile Cinema and Festivals",
   "The Healing Arts Creative Studio",
-  "Online Platform & Mobile App",
+  "Online Platform and Mobile App",
 ];
 
 function Index() {
@@ -68,7 +68,7 @@ function Index() {
           <div>
             <SectionHeading eyebrow="Who we are" title="A Community Where Everyone Can Thrive">
               <p>
-                Kuganja Foundation is a charity organization in Uganda dedicated to uplifting vulnerable families and individuals
+                Kuganja Foundation, formerly known as Victory Warriors, is a charity organization in Uganda dedicated to uplifting vulnerable families and individuals
                 through holistic care. By bridging spiritual nourishment, creative expression, mental health support, and practical
                 knowledge, we walk alongside our communities to break cycles of poverty and build resilient futures.
               </p>
@@ -79,11 +79,11 @@ function Index() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission and Vision */}
       <section className="section bg-muted">
         <div className="container-site grid gap-6 md:grid-cols-2">
           {[
-            { k: "Our Vision", v: "A thriving & resilient community where every individual is spiritually fulfilled, mentally supported, and economically empowered." },
+            { k: "Our Vision", v: "A thriving and resilient community where every individual is spiritually fulfilled, mentally supported, and economically empowered." },
             { k: "Our Mission", v: "To uplift vulnerable families through holistic community outreach, faith-based guidance, mental health advocacy, creative expression, and practical skills training." },
           ].map((c) => (
             <div key={c.k} className="card-elevated border-t-4 border-t-gold p-8 md:p-10">

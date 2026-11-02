@@ -23,26 +23,26 @@ export const Route = createFileRoute("/future-plans")({
 const GROUPS = [
   {
     icon: HeartPulse,
-    title: "Holistic Wellness & Family Support",
+    title: "Holistic Wellness and Family Support",
     items: [
-      ["Community Counseling & Wellness Clinic", "A planned permanent space for faith-based and clinical mental health counseling."],
-      ["Mobile Outreach & Support Units", "A planned service to bring support, essential supplies, and crisis intervention to remote or highly vulnerable families."],
+      ["Community Counseling and Wellness Clinic", "A planned permanent space for faith-based and clinical mental health counseling."],
+      ["Mobile Outreach and Support Units", "A planned service to bring support, essential supplies, and crisis intervention to remote or highly vulnerable families."],
       ["Family Restoration Retreats", "Proposed weekend retreats focused on family restoration through faith, counseling, and community."],
     ],
   },
   {
     icon: Clapperboard,
-    title: "Media, Culture & Spiritual Inspiration",
+    title: "Media, Culture and Spiritual Inspiration",
     items: [
-      ["Inspirational Mobile Cinema & Festivals", "A proposed expansion of inspirational film screenings to reach more communities."],
+      ["Inspirational Mobile Cinema and Festivals", "A proposed expansion of inspirational film screenings to reach more communities."],
       ["Healing Arts Creative Studio", "A planned creative hub where youth and vulnerable individuals can explore painting, music, drama, and fashion as tools for trauma recovery and cultural expression."],
     ],
   },
   {
     icon: Globe,
-    title: "Digital & Global Empowerment",
+    title: "Digital and Global Empowerment",
     items: [
-      ["Online Platform & Mobile App", "A future digital platform for faith-based mental health resources, inspirational media, and remote skills-building opportunities."],
+      ["Online Platform and Mobile App", "A future digital platform for faith-based mental health resources, inspirational media, and remote skills-building opportunities."],
     ],
   },
 ];

@@ -22,8 +22,8 @@ export const Route = createFileRoute("/about")({
 
 const VALUES = [
   ["Community Outreach", "Delivering essential resources, relief, and direct support to vulnerable families."],
-  ["Spiritual Nourishment & Motivation", "Sharing faith, hope, and motivation to uplift the soul and build strong community foundations."],
-  ["Mental Health Awareness & Wellbeing", "Hosting community workshops to combat stigma, teach mindfulness, and promote emotional wellbeing."],
+  ["Spiritual Nourishment and Motivation", "Sharing faith, hope, and motivation to uplift the soul and build strong community foundations."],
+  ["Mental Health Awareness and Wellbeing", "Hosting community workshops to combat stigma, teach mindfulness, and promote emotional wellbeing."],
   ["Faith-Based Spiritual Guidance", "Nurturing inner strength and hope by anchoring psychosocial care in a compassionate spiritual foundation."],
 ];
 
@@ -38,7 +38,7 @@ function About() {
         <div className="container-site grid items-center gap-12 md:grid-cols-2">
           <SectionHeading eyebrow="Overview" title="Who We Are">
             <p>
-              Kuganja Foundation is a charity organization in Uganda dedicated to uplifting vulnerable families and individuals
+              Kuganja Foundation, formerly known as Victory Warriors, is a charity organization in Uganda dedicated to uplifting vulnerable families and individuals
               through holistic care. By bridging spiritual nourishment, creative expression, mental health support, and practical
               knowledge, we walk alongside our communities to break cycles of poverty and build resilient futures.
             </p>
@@ -49,7 +49,7 @@ function About() {
 
       <section className="section bg-muted">
         <div className="container-site grid gap-12 md:grid-cols-[1fr_1.3fr]">
-          <SectionHeading eyebrow="History & founder" title="Born from the Streets, Driven by Hope" />
+          <SectionHeading eyebrow="History and founder" title="Born from the Streets, Driven by Hope" />
           <div className="space-y-5 text-foreground/85">
             <p>
               Kuganja Foundation was founded in 2018 by Kasheija Martin, a Ugandan fashion designer, community worker, and mental
@@ -80,7 +80,7 @@ function About() {
         <div className="container-site grid gap-6 md:grid-cols-2">
           <div className="card-elevated border-t-4 border-t-gold p-8">
             <p className="eyebrow">Our Vision</p>
-            <p className="mt-4 font-display text-xl font-semibold text-primary">A thriving & resilient community where every individual is spiritually fulfilled, mentally supported, and economically empowered.</p>
+            <p className="mt-4 font-display text-xl font-semibold text-primary">A thriving and resilient community where every individual is spiritually fulfilled, mentally supported, and economically empowered.</p>
           </div>
           <div className="card-elevated border-t-4 border-t-gold p-8">
             <p className="eyebrow">Our Mission</p>
