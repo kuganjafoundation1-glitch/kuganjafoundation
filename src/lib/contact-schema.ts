@@ -1,4 +1,3 @@
-import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 export const contactSchema = z.object({
@@ -14,14 +13,3 @@ export const contactSchema = z.object({
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
-
-/**
- * Delivers a contact message to the foundation's official inbox.
- * Delivery requires a verified sender email domain owned by the foundation.
- * Until one is configured this returns `not_configured` — never a false success.
- */
-export const sendContactMessage = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => contactSchema.parse(input))
-  .handler(async (): Promise<{ ok: true } | { ok: false; reason: "not_configured" }> => {
-    return { ok: false, reason: "not_configured" };
-  });
