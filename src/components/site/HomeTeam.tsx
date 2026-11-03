@@ -32,7 +32,7 @@ export function HomeTeam() {
         <div className="container-site">
           <div id="team-heading"><SectionHeading eyebrow="Our people" title="Meet Our Team" /></div>
           <article className="mt-10 grid items-center gap-7 md:grid-cols-[280px_1fr] md:gap-12">
-            <img src={kasheijaMartin} alt="Kasheija Martin, Founder and Director" width={594} height={594} loading="lazy" className="mx-auto aspect-square w-56 rounded-full object-cover ring-2 ring-gold/40 md:w-full" />
+            <img src={kasheijaMartin} alt="Kasheija Martin, Founder and Director" width={594} height={594} loading="lazy" className="mx-auto aspect-square w-56 rounded-full object-cover object-top ring-2 ring-gold/40 md:w-full" />
             <div>
               <h3 className="text-2xl">Kasheija Martin</h3>
               <p className="mt-2 font-semibold text-muted-foreground">Founder / Director</p>
