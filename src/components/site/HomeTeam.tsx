@@ -36,8 +36,10 @@ export function HomeTeam() {
               src={kasheijaMartin || "/kasheija-martin.jpg"}
               onError={(e) => {
                 const target = e.currentTarget;
-                if (!target.src.endsWith("/kasheija-martin.jpg")) {
+                if (!target.src.endsWith("/kasheija-martin.jpg") && !target.src.includes("lovable.app")) {
                   target.src = "/kasheija-martin.jpg";
+                } else if (target.src.endsWith("/kasheija-martin.jpg")) {
+                  target.src = "https://kuganjafoundation.lovable.app/__l5e/assets-v1/7c6535cb-4885-4f5a-8078-4b82dfaffc1a/kasheija-martin.jpg";
                 }
               }}
               alt="Kasheija Martin, Founder and Director"
