@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/site/PageHero";
 import { HomeTeam } from "@/components/site/HomeTeam";
 import { CONTACT, PROGRAMS, SITE_URL } from "@/lib/site";
 import cinema from "@/assets/cinema.jpg";
-import { donationsGroup, homeArts, homeHero } from "@/lib/images";
+import { community, donationsGroup, homeArts, homeHero, outreach } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,7 +75,38 @@ function Index() {
             </SectionHeading>
             <Button asChild variant="navy" size="lg" className="mt-8"><Link to="/about">About Us <ArrowRight /></Link></Button>
           </div>
-          <img src={donationsGroup} alt="Kuganja Foundation volunteers standing with collected donations of clothes, bedding and bags" loading="lazy" width={1070} height={713} className="aspect-[4/3] w-full rounded-lg object-cover shadow-card" />
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="col-span-2 overflow-hidden rounded-lg shadow-card">
+              <img
+                src={donationsGroup}
+                alt="Kuganja Foundation volunteers with relief supplies and donations"
+                loading="lazy"
+                width={1070}
+                height={713}
+                className="aspect-[16/10] w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-card">
+              <img
+                src={community}
+                alt="Kuganja Foundation community members"
+                loading="lazy"
+                width={1070}
+                height={803}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-card">
+              <img
+                src={outreach}
+                alt="Kuganja Foundation outreach team"
+                loading="lazy"
+                width={1070}
+                height={713}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

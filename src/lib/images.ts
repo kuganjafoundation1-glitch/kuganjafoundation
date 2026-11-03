@@ -11,6 +11,7 @@ import christmas2024_4 from "@/assets/christmas2024-4.jpg";
 import classWriting from "@/assets/class-writing.jpg";
 import cleaning1 from "@/assets/cleaning-1.jpg";
 import cleaning2 from "@/assets/cleaning-2.jpg";
+import community from "@/assets/community.jpeg";
 import covid1 from "@/assets/covid-1.jpg";
 import covid2 from "@/assets/covid-2.jpg";
 import covid3 from "@/assets/covid-3.jpg";
@@ -32,6 +33,7 @@ import mothers3 from "@/assets/mothers-3.jpg";
 import mothers4 from "@/assets/mothers-4.jpg";
 import muwongeAshiraf from "@/assets/muwonge-ashiraf.png";
 import nakayembaMargaret from "@/assets/nakayemba-margaret.png";
+import outreach from "@/assets/outreach.jpeg";
 import outreachBooks1 from "@/assets/outreach-books-1.jpg";
 import outreachBooks2 from "@/assets/outreach-books-2.jpg";
 import outreachBooks3 from "@/assets/outreach-books-3.jpg";
@@ -57,6 +59,7 @@ export {
   classWriting,
   cleaning1,
   cleaning2,
+  community,
   covid1,
   covid2,
   covid3,
@@ -78,6 +81,7 @@ export {
   mothers4,
   muwongeAshiraf,
   nakayembaMargaret,
+  outreach,
   outreachBooks1,
   outreachBooks2,
   outreachBooks3,
